@@ -225,10 +225,10 @@
               "content_position": "bottomCenter",
               "subheading": "",
               "title": "",
-              "button_1_text": "shop mens",
-              "button_1_link": "https://boardcollective.com.au/collections/mens-new-in",
-              "button_2_text": "shop womens",
-              "button_2_link": "https://boardcollective.com.au/collections/womens-new-in-1"
+              "button_1_text": "",
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
             }
           }
         },
