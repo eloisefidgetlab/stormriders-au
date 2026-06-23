@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow"
+    },
+    "collection-list": {
+      "type": "collection-list"
+    },
+    "featured-collections": {
+      "type": "featured-collections"
+    },
+    "shop-the-look": {
+      "type": "shop-the-look"
+    },
+    "blog-posts": {
+      "type": "blog-posts"
+    }
+  },
+  "order": [
+    "slideshow",
+    "collection-list",
+    "featured-collections",
+    "shop-the-look",
+    "blog-posts"
+  ]
+}

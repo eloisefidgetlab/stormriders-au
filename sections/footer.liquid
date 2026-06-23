@@ -56,19 +56,23 @@
                   </div>
                 {%- endif -%}
 
-                {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form' -%}
-                  {%- if form.posted_successfully? -%}
-                    <p class="Form__Alert Alert Alert--success">{{ 'footer.newsletter.success' | t }}</p>
-                  {%- else -%}
-                    {%- if form.errors -%}
-                      <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
-                    {%- endif -%}
+                {%- if block.settings.klaviyo_form_id != blank -%}
+                  <div class="klaviyo-form-{{ block.settings.klaviyo_form_id }}"></div>
+                {%- else -%}
+                  {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form' -%}
+                    {%- if form.posted_successfully? -%}
+                      <p class="Form__Alert Alert Alert--success">{{ 'footer.newsletter.success' | t }}</p>
+                    {%- else -%}
+                      {%- if form.errors -%}
+                        <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
+                      {%- endif -%}
 
-                    <input type="hidden" name="contact[tags]" value="newsletter">
-                    <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
-                    <button type="submit" class="Form__Submit Button Button--primary">{{ 'footer.newsletter.submit' | t }}</button>
-                  {%- endif -%}
-                {%- endform -%}
+                      <input type="hidden" name="contact[tags]" value="newsletter">
+                      <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
+                      <button type="submit" class="Form__Submit Button Button--primary">{{ 'footer.newsletter.submit' | t }}</button>
+                    {%- endif -%}
+                  {%- endform -%}
+                {%- endif -%}
             {%- endcase -%}
           </div>
         {%- endfor -%}
@@ -324,6 +328,12 @@
           "id": "content",
           "label": "Text",
           "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+        },
+        {
+          "type": "text",
+          "id": "klaviyo_form_id",
+          "label": "Klaviyo Form ID",
+          "info": "Enter your Klaviyo form ID (e.g. XxXxXx). When set, replaces the default Shopify newsletter form."
         }
       ]
     }
