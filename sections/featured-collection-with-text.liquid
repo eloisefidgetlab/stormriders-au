@@ -1,0 +1,64 @@
+<section id="section-{{ section.id }}" class="shopify-section--collections-with-text">
+  <a href="{{ section.settings.link }}">
+    <div class="collections-with-text-image">
+    </div>
+    <div class="collections-with-text-text">
+      <div class="content">
+        <h3>{{ section.settings.subtitle }}</h3>
+        <h2>{{ section.settings.title }}</h2>
+        <span>{{ section.settings.button_text }}</span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<style>
+  #section-{{ section.id }}.shopify-section--collections-with-text .collections-with-text-image {
+    background: url({{ section.settings.image | img_url: '2000x' }}) center center;
+    background-size: cover;
+  }
+  
+</style>
+
+{% schema %}
+{
+  "name": "Collections with text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "NEW ARRIVALS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "SHOP SURF"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Collection link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Featured collections with text",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+<section id="section-{{ section.id }}">
+  <div class="shop-board-collective {% if section.settings.add_spacing %}has-spacing{% endif %}">
+    {% if section.settings.image %}
+      <img src="{{ section.settings.image | img_url: 'large' }}" alt="">
+    {% endif %}
+    <p>{{ section.settings.text }}</p>
+    <a href="{{ section.settings.link }}" class="Button">{{ section.settings.button_text }}</a>
+  </div>
+  
+</section>
+
+
+<style>
+
+  #section-{{ section.id }} .shop-board-collective {
+    background-color: {{ section.settings.background_colour }};
+    color: {{ section.settings.text_color }};
+  }
+
+  #section-{{ section.id }} .shop-board-collective .Button {
+    color: {{ section.settings.background_colour }};
+    border-color: #ffffff;
+  }
+
+  #section-{{ section.id }} .shop-board-collective .Button:before {
+    background-color: #ffffff;
+  }
+
+  #section-{{ section.id }} .shop-board-collective .Button:hover {
+    color: #ffffff;
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": "Shop Board Collective",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Board collective logo"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SHOP BOARD COLLECTIVE"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_spacing",
+      "label": "Add spacing",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background_colour",
+      "label": "Background",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Shop Board Collective",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

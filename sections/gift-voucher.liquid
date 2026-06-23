@@ -1,0 +1,85 @@
+<section id="section-{{ section.id }}" class="shopify-section--gift-voucher">
+  <div class="gift-voucher-content">
+    <h2>{{ section.settings.title }}</h2>
+    <a href="{{ section.settings.link }}" class="Button Button--primary store-button--{{ section.settings.store_button }}">{{ section.settings.button_text }}</a>
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }}.shopify-section--gift-voucher {
+    background: url({{ section.settings.background_mobile | img_url: '2000x' }}) center center;
+    background-size: cover;
+  }
+  
+  @media (min-width: 641px) {
+    #section-{{ section.id }}.shopify-section--gift-voucher {
+    background: url({{ section.settings.background | img_url: '2000x' }}) center center;
+    }
+  }
+  
+</style>
+
+{% schema %}
+{
+  "name": "Gift vouchers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "GIFT VOUCHER"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Background mobile"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "select",
+      "id": "store_button",
+      "label": "Store button",
+      "options": [
+        {
+          "value": "board_collective",
+          "label": "Board Collective"
+        },
+        {
+          "value": "redherring",
+          "label": "Red Herring"
+        },
+        {
+          "value": "saltwater",
+          "label": "Saltwater Wine"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SHOP GIFT VOUCHERS"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Promotional",
+      "name": "Gift vouchers",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

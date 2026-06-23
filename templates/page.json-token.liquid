@@ -1,0 +1,9 @@
+{% layout none %}
+{% if customer %}
+    {% assign iat = "now" | date: "%s" %}
+    {% assign strCool = "email=" | append:{{customer.email}} | append: "&id=" | append: {{customer.id}} | append: "&iat=" | append: {{iat}} %}
+    {% assign my_secret_string = strCool | hmac_sha256: settings.secret_key%}
+    {{strCool}}&hash={{my_secret_string}}
+{% else %}
+    {"error": "Customer not found"}
+{% endif %}

@@ -1,0 +1,102 @@
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "pageDots": false,
+  "wrapAround": false,
+  "cellAlign": "center",
+  "watchCSS": true,
+  "groupCells": "100%"
+}
+{%- endcapture -%}
+
+<section class="Section section--featured-products-salt-board" data-section-id="{{ section.id }}" data-section-type="best-sellers" data-settings='{{ section_settings }}'>
+  <header class="SectionHeader SectionHeader--center">
+    <h3>{{ section.settings.subheading }}</h3>
+    <h2>{{ section.settings.title }}</h2>
+  </header>
+
+  <div class="ProductList" data-flickity='{{ flickity_options }}'>
+    {%- for block in section.blocks -%}
+      <div class="Carousel__Cell--item">
+        <a href="{{ block.settings.product_link }}">
+          <img src="{{ block.settings.image | img_url: 'large' }}" alt="product-image">
+          <span class="brand">{{ block.settings.brand }}</span>
+          <span class="name">{{ block.settings.product_name }}</span>
+          <span class="price">{{ block.settings.price }}</span>
+        </a>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {% if section.settings.button_text %}
+    <a href="{{ section.settings.button_link }}" class="Button best-sellers-button">{{ section.settings.button_text }}</a>
+  {% endif %}
+
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "brand",
+          "label": "Brand"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product name"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured product Saltwater/Boardcollective"
+    }
+  ]
+}
+{% endschema %}

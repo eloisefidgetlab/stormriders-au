@@ -1,0 +1,86 @@
+{% unless product.vendor == empty %}
+  {%- capture vendor_page_handle -%}{{product.vendor | handlelize }}-size-guide{%- endcapture -%}
+  {%- unless pages[vendor_page_handle].content == empty -%}
+    <div id="plus-size-guide_container">
+      <span class="plus-size-guide_toggle">
+        {{- 'plus.size_guide_toggle.top_toggle' | t: vendor: product.vendor -}}
+        <svg class="Icon Icon--select-arrow plus-size-guide_arrow" role="presentation" viewBox="0 0 19 12">
+          <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+        </svg>
+      </span>
+      <div class="plus-size-guide_content">
+        {{ pages[vendor_page_handle].content }}
+      </div>
+      <span class="plus-size-guide_toggle plus-size-guide_close_toggle" href="#plus-size-guide_container">
+        {{- 'plus.size_guide_toggle.bottom_toggle' | t: vendor: product.vendor -}}
+        <svg class="Icon Icon--select-arrow plus-arrow-flipped" role="presentation" viewBox="0 0 19 12">
+          <polyline fill="none" stroke="currentColor" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <style>
+      #plus-size-guide_container {
+        text-align: center;
+        border-top: 1px solid #dddddd;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+
+      #plus-size-guide_container svg {
+        margin-left: 0.5em;
+      }
+
+      .plus-size-guide_toggle {
+        cursor: pointer;
+      }
+
+      .plus-size-guide_content {
+        display:none;
+        margin: 0px auto 20px auto;
+        word-break: break-word;
+        max-width: 680px;
+      }
+
+      .plus-size-guide_content table {
+        width: 100%;
+      }
+
+      .plus-arrow-flipped {
+        transform: rotate(-180deg);
+      }
+
+      .plus-size-guide_arrow {
+        transition-duration: 300ms;
+        transition-property: transform;
+      }
+
+      .plus-size-guide_close_toggle {
+        display: none;
+      }
+
+      @media screen and (max-width: 640px) {
+        .plus-size-guide_container {
+          border-bottom: 1px solid #dddddd;
+          margin-bottom: 45px;
+        }
+
+        .plus-size-guide_content {
+          width: 100%;
+        }
+
+        #plus-size-guide_container {
+          border-bottom: 1px solid #dddddd;
+          margin-bottom: 45px;
+        }
+      }
+    </style>
+    <script>
+      $('.plus-size-guide_toggle').click(function(){
+        $('.plus-size-guide_content').toggle();
+        $('.plus-size-guide_close_toggle').toggle();
+        $('.plus-size-guide_arrow').toggleClass('plus-arrow-flipped');
+      });
+    </script>
+  {%- endunless -%}
+{%- endunless -%}

@@ -1,0 +1,242 @@
+<section data-section-id="reset-password" data-section-type="reset-password">
+  <div class="Container">
+    <div class="PageContent PageContent--fitScreen register-page-container">
+       {%- form 'create_customer', name: 'create_customer', class:
+      'Form Form--spacingTight', id: 'create_customer' -%}
+      {% section 'register-header' %}
+      <header class="Form__Header">
+        <h1 class="Form__Title Heading u-h1 register--header">SIGN UP BELOW</h1>
+      </header>
+
+      {%- if form.errors -%}
+      <div class="Form__Alert Alert Alert--error">
+        <ul class="Alert__ErrorList">
+          {%- for field in form.errors -%} {%- if field == 'form' -%}
+          <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
+          {%- else -%}
+          <li class="Alert__ErrorItem">
+            <strong>{{ form.errors.translated_fields[field] }}</strong>
+            {{ form.errors.messages[field] }}
+          </li>
+          {%- endif -%} {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+
+      <section id="register--page">
+        
+        <div class="Form__Item">
+          <input
+            type="email"
+            class="Form__Input"
+            name="customer[email]"
+            aria-label="{{ 'customer.register.email' | t }}"
+            placeholder="{{ 'customer.register.email' | t }}"
+            required="required"
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.email" | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="password"
+            class="Form__Input"
+            name="customer[password]"
+            aria-label="{{ 'customer.register.password' | t }}"
+            placeholder="{{ 'customer.register.password' | t }}"
+            required="required"
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.password" | t }}</label>
+        </div>
+
+        {%- if request.locale.iso_code == 'ja' -%}
+        <div class="form-field-row">
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[last_name]"
+            aria-label="{{ 'customer.register.last_name' | t }}"
+            placeholder="{{ 'customer.register.last_name' | t }}"
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.last_name" | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[first_name]"
+            aria-label="{{ 'customer.register.first_name' | t }}"
+            placeholder="{{ 'customer.register.first_name' | t }}"
+            autofocus
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.first_name" | t }}</label>
+        </div>
+      </div>
+        {%- else -%}
+        <div class="form-field-row">
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[first_name]"
+            aria-label="{{ 'customer.register.first_name' | t }}"
+            placeholder="{{ 'customer.register.first_name' | t }}"
+            autofocus
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.first_name" | t }}</label>
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[last_name]"
+            aria-label="{{ 'customer.register.last_name' | t }}"
+            placeholder="{{ 'customer.register.last_name' | t }}"
+          />
+          <label class="Form__FloatingLabel">{{ "customer.register.last_name" | t }}</label>
+        </div>
+      </div>
+        {%- endif -%}
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[note][address]"
+            aria-label="{{ 'customer.register.address' | t }}"
+            placeholder="Address"
+          />
+          <label class="Form__FloatingLabel">Address</label>
+        </div>
+
+        <!-- <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[note][apartment]"
+            aria-label="{{ 'customer.register.apartment' | t }}"
+            placeholder="Apartment, suite, etc. (optional)"
+          />
+          <label class="Form__FloatingLabel">Apartment, suite, etc. (optional)</label>
+        </div> -->
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[note][suburb]"
+            aria-label="{{ 'customer.register.suburb' | t }}"
+            placeholder="Suburb"
+          />
+          <label class="Form__FloatingLabel">Suburb</label>
+        </div>
+
+        <div class="form-field-row">
+          <div class="Form__Item">
+            <input
+              type="text"
+              class="Form__Input"
+              name="customer[note][country]"
+              aria-label="{{ 'customer.register.country' | t }}"
+              placeholder="Country/Region"
+            />
+            <label class="Form__FloatingLabel">Country</label>
+          </div>
+          <div class="Form__Item">
+            <input
+              type="text"
+              class="Form__Input"
+              name="customer[note][state]"
+              aria-label="{{ 'customer.register.state' | t }}"
+              placeholder="State/Territory"
+            />
+            <label class="Form__FloatingLabel">State/Territory</label>
+          </div>
+          <div class="Form__Item">
+            <input
+              type="text"
+              class="Form__Input"
+              name="customer[note][postcode]"
+              aria-label="{{ 'customer.register.postcode' | t }}"
+              placeholder="Post Code"
+            />
+            <label class="Form__FloatingLabel">Post Code</label>
+          </div>
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input"
+            name="customer[note][phone]"
+            aria-label="{{ 'customer.register.phone' | t }}"
+            placeholder="Phone"
+          />
+          <label class="Form__FloatingLabel">Phone</label>
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="date"
+            class="Form__Input customer-tags-field"
+            name="customer[note][birthday]"
+            aria-label="{{ 'customer.register.birthday' | t }}"
+            placeholder="Birthday"
+            data-tag="DOB"
+          />
+          <!-- <label class="Form__FloatingLabel">Birthday</label> -->
+        </div>
+
+        <div class="Form__Item">
+          
+          <select class="Form__Input" name="customer[note][gender]" placeholder="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <!-- <label class="Form__FloatingLabel" for="customer[note][gender]">Gender</label> -->
+        </div>
+
+        <div class="Form__Item">
+          <input
+            type="text"
+            class="Form__Input mr-local-store"
+            name="customer[note][local_store]"
+            aria-label="{{ 'customer.register.local_store' | t }}"
+            placeholder="Local Store (optional)"
+            style="display: none;"
+          />
+          <label class="Form__FloatingLabel">Local Store (optional)</label>
+        </div>
+
+        <div class="Form__Item t_c_privacy_container">
+          <input
+            class="privacy-checkbox"
+            type="checkbox"
+            name="t_c_privacy"
+            aria-label="{{ 'Terms and Conditions/Privacy Policy Checkbox' | t }}"
+            required
+          />
+          <label id="t_c_privacy-label">
+            By subscribing and / or creating an account you agree to the BoardCollective 
+            <a href="/pages/terms">Terms and Conditions</a> and the 
+            <a href="/pages/privacy-policy">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <input id="customer_referral_site" type="hidden" style="display:none;" name="customer[note][brand_preferences]">
+        <input id="customer_front_end_flag" value="frontEnd" type="hidden" style="display:none;" name="customer[note][front_end]">
+        <button type="submit" class="Form__Submit Button Button--primary Button--full" id="customer-register-submit">
+          {{ "customer.register.submit" | t }}
+        </button>
+      </section>
+      {% comment %}
+      <input type="hidden" name="customer[tags]" id="customer-tags-input"> 
+      {% endcomment %}
+      {%- endform -%}
+    </div>
+  </div>
+</section>

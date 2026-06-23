@@ -1,0 +1,87 @@
+<section class="Section section-featured-products-stormriders">
+  <div class="Container">
+    {%- if section.settings.title != blank -%}
+      <header class="SectionHeader SectionHeader--center">
+        <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+      </header>
+    {%- endif -%}
+
+    <div class="FeaturedProduct">
+      <div class="featured__product--left">
+        {% if section.settings.image %}
+          <img src="{{ section.settings.image | img_url: 'master' }}" alt="product-image">
+        {% endif %}
+      </div>
+      <div class="featured__product--right">
+        <div class="product_info">
+          <span class="vendor">{{ section.settings.vendor }}</span>
+          <span class="name">{{ section.settings.name }}</span>
+          <span class="price">{{ section.settings.price }}</span>
+          <a href="{{ sections.settings.button_link }}" class="Button">{{ section.settings.button_text }}</a>
+          <a href="{{ section.settings.view_link }}" class="view_more">{{ section.settings.view_text }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Featured product SR",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "vendor",
+      "label": "Product vendor"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Product name"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Product price"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "view_text",
+      "label": "View more text"
+    },
+    {
+      "type": "url",
+      "id": "view_link",
+      "label": "View more link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured product Stormriders"
+    }
+  ]
+}
+{% endschema %}

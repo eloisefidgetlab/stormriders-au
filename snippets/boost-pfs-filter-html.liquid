@@ -1,0 +1,51 @@
+{%- capture boost_pfs_layout -%}
+{%- case layout -%}
+
+{%- when 'productGridItemHtml' -%}
+{% raw %}
+<div class="Grid__Cell 1/{{mobileRow}}--phone 1/{{tabletRow}}--tablet-and-up 1/{{desktopRow}}--{{buildClass}}">
+	<div class="ProductItem {{buildClassHiz}}">
+		<div class="ProductItem__Wrapper">
+			{{itemImages}}
+			{{itemLabels}}
+			{{itemInfo}}
+		</div>
+		{{buildButtonSecond}}
+	</div>
+</div>
+{% endraw %}
+
+{%- when 'previousActiveHtml' -%}
+<a class="Pagination__NavItem Link Link--primary" rel="prev" href="[[itemUrl]]">
+	<svg class="[[ icon_class ]]" role="presentation" viewBox="0 0 11 18"><path d="M9.5 1.5L1.5 9l8 7.5" stroke-width="2" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="square"></path></svg>
+</a>
+
+{%- when 'previousDisabledHtml' -%}
+
+{%- when 'nextActiveHtml' -%}
+<a class="Pagination__NavItem Link Link--primary" rel="next" href="[[itemUrl]]">
+	<svg class="[[ icon_class ]]" role="presentation" viewBox="0 0 11 18"><path d="M1.5 1.5l8 7.5-8 7.5" stroke-width="2" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="square"></path> </svg>
+</a>
+
+{%- when 'nextDisabledHtml' -%}
+
+{%- when 'pageItemHtml' -%}
+<a class="Pagination__NavItem Link Link--primary" href="[[itemUrl]]">[[itemTitle]]</a>
+
+{%- when 'pageItemSelectedHtml' -%}
+<span class="Pagination__NavItem is-active">[[itemTitle]]</span>
+
+{%- when 'pageItemRemainHtml' -%}
+<span class="Pagination__NavItem">[[itemTitle]]</span>
+
+{%- when 'paginateHtml' -%}
+<div class="Pagination Text--subdued"><div class="Pagination__Nav">[[previous]][[pageItems]][[next]]</div></div>
+
+{%- when 'sortingHtml' -%}
+[[sortingItems]]
+
+{%- endcase -%}
+
+{%-  endcapture -%}
+{%- assign str = '}}' -%}
+{{- boost_pfs_layout | json | replace: '[[', '{{' | replace: ']]', str -}}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+    <script src="{{ 'bundle.js' | asset_url }}"></script>
+    <script src="{{ 'sweetalert2.js' | asset_url }}"></script>
+    <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+    {{ checkout_stylesheets }}
+    <style>
+      button[disabled], input[disabled] { opacity: 0.5; }
+      .fieldset .field .field__input-btn-wrapper{ display:none !important; }
+      .order-summary__section.order-summary__section--discount{padding-top: 0px; border-top: unset !important;}
+    </style>
+    {{ checkout_scripts }}
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    {{ tracking_code }}
+    <!-- gift card and voucher need to add to order attribute -->
+    <!-- <input type="hidden" value="" id="y2_code_1" name="checkout[attributes][y2_code_1]">
+    <input type="hidden" value="" id="y2_code_2" name="checkout[attributes][y2_code_2]"> -->
+  </body>
+
+  {% comment %} apply gift vouchers to checkout {% endcomment %}
+  <script>
+    function getVoucherLocally(){
+      const voucherList = JSON.parse(localStorage.getItem('mrVoucherForCheckout') || '[]')
+      return voucherList.map(v=>v.voucherId) 
+
+    }
+
+    $(document).ready(function(){
+      // customer not the same can't apply
+      let customerId = 'guest'
+      const voucherCustomerId = localStorage.getItem('mrVoucherCustomerId')
+      {% if customer %}
+        customerId = {{customer.id}};
+      {% endif %}
+      if (customerId.toString() == voucherCustomerId && getVoucherLocally()){
+        // disable last code
+        // const codeToAppliedDisable = localStorage.getItem('mrVoucherForCheckoutDisable')
+        // const codeText = codeToAppliedDisable.slice(-4).toUpperCase()
+        // const $voucherDisableBtn = $(".tag__button").parent('.tag__wrapper').find(`.reduction-code span[aria-hidden="true"]:contains("${codeText}")`).parents('.tag__wrapper').find('.tag__button')
+        // $voucherDisableBtn.trigger('click')
+        // get voucher code
+        // console.log(getVoucherLocally())
+        const voucherList = []
+        // save to add order attribute, since trigger click would refresh the page, logic behind this might not execute
+        for (const codeToApplied of getVoucherLocally()){
+          if (codeToApplied) {
+            voucherList.push(codeToApplied)
+            console.log(12345566,voucherList)
+          }
+        }
+        if (voucherList.length)localStorage.setItem('mrVoucherForAttribute',JSON.stringify(voucherList))
+        for (const codeToApplied of getVoucherLocally()){
+          // const codeToApplied = localStorage.getItem('mrVoucherForCheckout')
+          // apply voucher
+          const $applyGiftVoucherInput = $('#checkout_reduction_code');
+          const $applyGiftVoucherBtn = $('.field__input-btn');
+          $applyGiftVoucherInput.val(codeToApplied);
+          $applyGiftVoucherBtn.prop('disabled', false).trigger('click');
+        }
+        
+        // remove voucher code
+        localStorage.setItem('mrVoucherForCheckout','')
+      }
+      $(document).on('submit','.main__content .edit_checkout',function(){
+        const giftcard = JSON.parse(localStorage.getItem('mrGiftcardForCheckout'))
+        const codesToApplied = JSON.parse(localStorage.getItem('mrVoucherForAttribute') || '[]')
+        if (giftcard)codesToApplied.push(giftcard)
+        console.log('codesToApplied',codesToApplied)
+        $('.mr_checkout_attribute').remove()
+        for (const code of codesToApplied){
+            console.log('???',code)
+            const attributeId = `${Math.floor(Math.random() * 10000)}-${code.slice(-4)}`
+            console.log(attributeId,code)
+            console.log($('.main__content .edit_checkout').length)
+            const input = `<input class='mr_checkout_attribute' type="hidden" value=${code} id="y2_code_gift_${attributeId}" name="checkout[attributes][y2_code_gift_${attributeId}]">`
+            $('.main__content .edit_checkout').append(input)
+          }
+        });
+    })
+  </script>
+
+  {% comment %} Loyalty point script {% endcomment %}
+  <script>
+    function getVoucherLocally4digit(code){
+      const voucherList = JSON.parse(localStorage.getItem('mrVoucherForCheckout') || '[]')
+      // check the applied element code 4 digit in the voucher list or not, if not in voucher, means point voucher applied
+      return voucherList.some(v=>v.code4 == code || v.code4==code.toLowerCase())
+      
+
+    }
+    console.log('check.liquid')
+    // to avoid point voucher repeat apply, the curretly logic just check if there is any voucher has been applied
+    // however, this didn't consider giftcard can be applied
+    // therefore use noRepeatPoint to mark if the applied element is only because of giftvoucher
+    //  noRepeatPoint=true means point voucher can applied
+    let noRepeatPoint = false
+    $(document).ready(function(){
+      // CUTOMIZE GIFT CARD INPUT 
+      // $('.order-summary__section.order-summary__section--product-list').after('<div id="mr_custom_gift_app"></div>');
+      // window.initGiftCard()
+      // END
+
+      const $reduction_line = $('.total-line.total-line--reduction');
+      let mutiplier = 40;
+      // init loyalty app
+      {% if customer %}
+        window.re_customer_id = {{customer.id}};
+      {% endif %}
+      window.total_price = Math.round({{ checkout.total_price }} / 100);
+      
+      function getReductionPoint() {
+        let reduction_point = 0;
+        
+        $reduction_line.each(function(){
+          const name = $(this).find('.total-line__name span:first-child').text();
+          const price = $(this).find('.total-line__price span').text().replace(/[^0-9.]/gm, '');
+          const code = $(this).find('.reduction-code__text .visually-hidden').html().trim().split('with').slice(-1)[0].trim()
+          if(name.includes('Gift card') && price) {
+            reduction_point = price * mutiplier;
+          }
+          if (!getVoucherLocally4digit(code)){
+            // if not found in list, base on previous dev's logic, this is means point voucher applied,
+            //  then noRepeatPoint=true. This doesn't not consider other customer provided code logic, though
+            noRepeatPoint=true
+          }
+        });
+        return reduction_point;
+      }
+
+      function setRemoveListner() {
+        console.log('remove')
+        $(document).on('click', '.tag__button', function(){
+          // window.initLoyaltyApp({mutiplier,reduction_point: 0, page: 'checkout'});
+        });
+      }
+
+      $('.order-summary__section.order-summary__section--product-list').after('<div id="loyalty_app"></div>');
+
+      function insertCheckoutAttributes () {
+        $('#loyalty_amount').appendTo($('.main__content .edit_checkout'));
+      }
+
+      setRemoveListner();
+      const reduction_point=getReductionPoint()
+      setTimeout(() => {
+        // console.log('loyalti app liquid')
+        // console.log(noRepeatPoint)
+        // window.initLoyaltyApp({mutiplier, reduction_point: reduction_point, page: 'checkout',noRepeatPoint:noRepeatPoint });
+        // console.log('loyalti app liquid no error')
+      }, 0);
+      console.log('hello')
+    });
+  </script>
+  
+  
+  
+  {% comment %} Custom disable PO box script {% endcomment %}
+  <script>
+    (function($) {
+      $(document).on('ready page:load page:change', function() {
+        // to revert
+        $('.order-summary__section--product-list').append(`<style>.order-summary__section--product-list:after{ display:none }</style>`)
+        // to revert end
+        var regex = /\b(?:p\.?\s*o\.?|post\s+office)(\s+)?(?:box|[0-9]*)?\b/igm;
+        var fieldErrorClass = 'field--error';
+        var fieldErrorMessageSelector = '.field__message--error';
+        var errorText = 'Please note: We do not ship to P.O Boxes address';
+        var $inputs = $("[data-step] [name='checkout[shipping_address][company]'], [data-step] [name='checkout[shipping_address][address1]'], [data-step] [name='checkout[shipping_address][address2]'], [data-step] [name='checkout[shipping_address][city]']");
+
+
+        var validateFields = function(elem){
+          var $current = $(elem);
+          var $parent = $current.closest('.field__input-wrapper');
+          var $field = $current.closest('.field');
+
+          if (regex.test($current.val())) {
+            if (!$field.hasClass(fieldErrorClass)) {
+              $field.addClass(fieldErrorClass);
+            }
+            if ($field.find(fieldErrorMessageSelector).length < 1) {
+              $parent.after("<p class='field__message field__message--error'>"+ errorText +"</p>");
+            }
+          }
+          else{
+            if ($field.hasClass(fieldErrorClass)) {
+              $field.removeClass(fieldErrorClass);
+            }
+            if ($field.find(fieldErrorMessageSelector).length > 0) {
+              $field.find(fieldErrorMessageSelector).remove();
+            }
+          }
+        }
+
+        var regexCheckFn = function(elem) {
+        var $current = $(elem);
+        if (regex.test($current.val())) {
+        return false;
+        } else {
+        return true;
+        }
+        };
+
+        // Call regex check on form submit
+        $(document).on('submit', '[data-step] form', validateForm);
+
+        // Call regex check on blur
+        $inputs.blur(validateForm);
+
+        function validateForm() {
+        var isValid = true;
+        $inputs.each(function() {
+
+        validateFields($(this));
+
+        isValid = isValid && regexCheckFn($(this));
+        });
+        if (isValid) {
+          $("#continue_button").removeAttr("disabled");
+        } else {
+          $("#continue_button").attr("disabled", "disabled").removeClass("btn--loading");
+        }
+        return isValid;
+        }
+      });
+    })(Checkout.$);
+  </script>
+  
+  
+</html>

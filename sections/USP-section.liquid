@@ -1,0 +1,57 @@
+<section class="Section Section--USP-section">
+  <div class="usp-section-wrapper">
+    {%- for block in section.blocks -%}
+      {% if block.settings.image %}
+        <div class="usp-section-item">
+          <div class="image-wrapper">
+            <img src="{{ block.settings.image | img_url: 'large' }}" alt="product-image">
+          </div>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "USP Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "USP Section"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "USP Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "USP image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Store information",
+      "name": "USP Section",
+      "blocks": [
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

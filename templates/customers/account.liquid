@@ -1,0 +1,584 @@
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    
+
+
+<div class="Container Container--wide account-wrapper">
+  <header class="PageHeader">
+    <a
+      href="{{ routes.account_logout_url }}"
+      class="PageHeader__Back Heading Text--subdued Link Link--primary u-h7 logout-myaccount"
+      >{{ "customer.account.logout" | t }}</a
+    >
+    <div id="mr-customer-id" data-customer-id = "{% if customer %}{{customer.id}}{% endif %}"></div>
+    <div class="SectionHeader account-header">
+      <h1 class="SectionHeader__Heading Heading u-h1">
+        {{ "customer.account.title" | t }}
+      </h1>
+      <p class="SectionHeader__Description account-welcome">
+        {{ "customer.account.welcome" | t: first_name:customer.first_name }}
+      </p>
+    </div>
+  </header>
+
+  <div class="PageLayout PageLayout--breakLap">
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    ORDER HISTORY
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    <div class="PageLayout__Section PageLayout__Section--primary">
+
+      <div class="mr-model-background" style="display:none">
+        <div class="mr-model-loading loading"></div>
+      </div>
+      <div class="mr-model-wrapper" style="display:none">
+          <div class="model-close" onclick="mrModelClose()">
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0.353553" y1="0.646447" x2="21.3536" y2="21.6464" stroke="black"/>
+              <line x1="21.3536" y1="1.35355" x2="0.353554" y2="22.3536" stroke="black"/>
+            </svg>
+          </div>
+          <div class="model-title">SUCCESS!</div>
+          <div class="model-text">Your voucher has been applied to your cart.</div>
+          <a href="collections/all" class="model-continue">CONTINUE SHOPPING</a>
+      </div>
+      
+
+      <section class="account-page-tabs">
+        <input type="radio" name="account-tabs" id="account-details" checked />
+        <label class="account-page-nav" for="account-details">My Details</label>
+        <input type="radio" name="account-tabs" id="account-orders-online" />
+        <label class="account-page-nav" for="account-orders-online">My Orders</label>
+        <!-- <input type="radio" name="account-tabs" id="account-orders-offline" />
+        <label class="account-page-nav" for="account-orders-offline">My Offline Orders</label> -->
+
+        {%- if settings.enable_mates -%}
+        <input type="radio" name="account-tabs" id="account-mates" />
+        <label class="account-page-nav account-page-last-nav" for="account-mates">Mates Benefits</label>
+        {%- endif -%}
+        
+        <div class="account-tabs-divider"></div>
+        <div class="account-page-tabs-content">
+          <section class="account-tab account-details-tab">
+            <div class="account-details-container">
+              {%- if request.locale.iso_code == 'ja' -%}
+              <div class="account-field-row">
+                <div class="account-form-item column">
+                  <input
+                    type="text"
+                    class="account-form-input"
+                    name="customer[last_name] account-name"
+                    aria-label="{{ 'customer.last_name' | t }}"
+                    value="{{customer.last_name}}"
+                    disabled
+                  />
+                  <label class="account-form-label">{{ "customer.register.last_name" | t }}</label>
+                </div>
+
+                <div class="account-form-item column">
+                  <input
+                    type="text"
+                    class="account-form-input account-name"
+                    name="customer[first_name]"
+                    aria-label="{{ 'customer.register.first_name' | t }}"
+                    value="{{customer.first_name}}"
+                    disabled
+                  />
+                  <label class="account-form-label">{{ "customer.register.first_name" | t }}</label>
+                </div>
+              </div>
+              {%- else -%}
+              <div class="account-field-row">
+                <div class="account-form-item column">
+                  <input
+                    type="text"
+                    class="account-form-input account-name"
+                    name="customer[first_name]"
+                    aria-label="{{ 'customer.register.first_name' | t }}"
+                    value="{{customer.first_name}}"
+                    disabled
+                  />
+                  <label class="account-form-label">{{ "customer.register.first_name" | t }}</label>
+                </div>
+
+                <div class="account-form-item column">
+                  <input
+                    type="text"
+                    class="account-form-input account-name"
+                    name="customer[last_name]"
+                    aria-label="{{ 'customer.register.last_name' | t }}"
+                    value="{{customer.last_name}}"
+                    disabled
+                  />
+                  <label class="account-form-label">{{ "customer.register.last_name" | t }}</label>
+                </div>
+              </div>
+              {%- endif -%}
+              <div class="account-field-row">
+                <div class="account-form-item account-form-birthday column">
+                  <input
+                    type="date"
+                    class="account-form-input account-birthday"
+                    name="customer[note][birthday]"
+                    aria-label="{{ 'customer.register.birthday' | t }}"
+                    value={{customer.notes.birthday}}
+                  />
+                  <label class="account-form-label">DATE OF BIRTH</label>
+                </div>
+
+                <div class="account-form-item column">
+                  <input
+                    type="text"
+                    class="account-form-input"
+                    id="account-form-phone"
+                    name="customer[phone]"
+                    aria-label="{{ 'customer.register.phone' | t }}"
+                    value="{%if customer.phone%}{{customer.phone}}{%else%}{{customer.default_address.phone}}{% endif %}"
+                  />
+                  <label class="account-form-label">MOBILE</label>
+                </div>
+              </div>
+              <div class="account-field-row">
+                <div class="account-form-item column account-email">
+                  <input
+                    type="email"
+                    class="account-form-input"
+                    id = "account-form-email"
+                    name="customer[email]"
+                    aria-label="{{ 'customer.register.email' | t }}"
+                    value="{{customer.email}}"
+                    readonly
+                  />
+                  <label class="account-form-label">{{ "customer.register.email" | t }}</label>
+                </div>
+              </div>
+              <div class="account-toggle-header account-header-communications">Communications Preferences</div>
+              <div class="account-toggles-row">
+                <div class="account-toggles-item row">
+                  <input
+                    type="checkbox"
+                    id="account-communications-email"
+                    class="account-form-checkbox"
+                  />
+                  <label for="account-communications-email">Email</label>
+                </div>
+                <div class="account-toggles-item row">
+                  <input
+                    type="checkbox"
+                    id="account-communications-sms"
+                    class="account-form-checkbox"
+                  />
+                  <label for="account-communications-sms">SMS</label>
+                </div>
+                <!-- <div class="account-toggles-item row">
+                  <input
+                    type="checkbox"
+                    id="account-communications-unsub"
+                    class="account-form-checkbox"
+                  />
+                  <label for="account-communications-unsub">Unsubscribe From All</label>
+                </div> -->
+              </div>
+              <div class="account-toggle-header brand-preferences-header">Brand Preferences</div>
+              <div class="account-toggles-row brand-preferences-rows">
+                <div class="account-toggles-item row">
+                  <input type="checkbox" id="account-brand-sw" class="account-form-checkbox" />
+                  <label for="account-brand-sw">Saltwater Wine</label>
+                </div>
+                <div class="account-toggles-item row">
+                  <input type="checkbox" id="account-brand-sr" class="account-form-checkbox" />
+                  <label for="account-brand-sr">Stormriders</label>
+                </div>
+                <div class="account-toggles-item row">
+                  <input type="checkbox" id="account-brand-rh" class="account-form-checkbox" />
+                  <label for="account-brand-rh">Red Herring Surf</label>
+                </div>
+                <div class="account-toggles-item row">
+                  <input type="checkbox" id="account-brand-bc" class="account-form-checkbox" disabled checked/>
+                  <label for="account-brand-bc">BoardCollective</label>
+                </div>
+              </div>
+            </div>
+            <div class="account-details-save">
+              <button id="account-details-save-btn" class="My-account-btn Button Button--primary Button--half" data-customer-id="{{customer.id}}">
+                Save
+              </button>
+            </div>
+            <div class="account-divider"></div>
+            <section class="account-page-reset">
+              <span>Forgot your password?</span>
+              <a href="/account/login?return_url=%2Faccount">
+                <button id="reset-password" class="My-account-btn Form__Submit Button Button--primary Button--full">
+                  Reset My Password
+                </button>
+              </a>
+            </section>
+            <div class="account-divider"></div>
+          </section>
+          <!-- online orders -->
+          <!-- <section class="account-tab account-orders-online-tab">
+            {%- if customer.orders.size == 0 -%}
+            <div class="Segment">
+              <div class="Segment__Content">
+                <p>{{ "customer.account.no_orders_content" | t }}</p>
+              </div>
+            </div>
+            {%- else -%} {%- paginate customer.orders by 25 -%}
+            <div class="TableWrapper" id="order-table-desktop-online">
+              <table class="AccountTable Table Table--large">
+                <thead class="Text--subdued">
+                  <tr>
+                    <th>{{ "customer.orders.order_number" | t }}</th>
+                    <th>{{ "customer.orders.date" | t }}</th>
+                    <th>Store</th>
+                    <th>{{ "customer.orders.payment_status" | t }}</th>
+                    <th>{{ "customer.orders.fulfillment_status" | t }}</th>
+                    <th>
+                      {{ "customer.orders.total" | t }}
+                    </th>
+                    <th class="Text--alignRight">
+                      Return
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody class="Heading u-h7">
+                 {%- for order in customer.orders -%}
+                  <tr>
+                    <td>
+                      <a href="{{ order.customer_url }}" class="Link Link--underline">{{
+                        order.name
+                      }}</a>
+                    </td>
+                    <td>
+                      {{ order.created_at | date: format:"month_day_year" }}
+                    </td>
+                    <td>BoardCollective</td>
+                    <td>{{ order.financial_status_label }}</td>
+                    <td>{{ order.fulfillment_status_label }}</td>
+                    <td>
+                      {{ order.total_price | money_without_trailing_zeros }}
+                    </td>
+                    <td class="Text--alignRight">
+                      <a class="order-returns-link return-allowed">Create Return</a>
+                    </td>
+                  </tr>
+                 {%- endfor -%}
+                </tbody>
+              </table>
+            </div>
+            <div id="order-cards-mobile-online">
+              {%- for order in customer.orders -%}
+              <div class="order-card">
+                <ul>
+                 <li>
+                   <div class="Text--subdued">Order</div>
+                   <div>
+                     <a href="{{ order.customer_url }}">
+                       {{order.name}}
+                     </a>
+                   </div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Date</div>
+                   <div>{{order.created_at | date: format: "month_day_year" }}</div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Store</div>
+                   <div>Board Collective</div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Payment Status</div>
+                   <div>{{ order.finacial_status_label }}</div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Order Status</div>
+                   <div>{{ order.fulfillment_status_label }}</div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Total</div>
+                   <div>{{ order.total_price | money_without_trailing_zeros }}</div>
+                 </li>
+                 <li>
+                   <div class="Text--subdued">Return</div>
+                   <div>
+                     <a>Create Return</a>
+                   </div>
+                 </li>
+                </ul>
+              </div>
+              <div class="account-divider"></div>
+              {%- endfor -%}
+            </div>
+
+            {%- render 'pagination', paginate: paginate -%} {%- endpaginate -%} {%- endif -%}
+          </section> -->
+          <!-- offline order -->
+          <section class="account-tab account-orders-offline-tab">
+            <div class="btn-switch-button">
+              <input type="radio" id="online-order-history-switch" name="order-switch" value="ONLINE ORDER" checked>
+              <label class="order-history-switch" id="online-order-switch-label" for="online-order-history-switch">ONLINE ORDER</label>
+              <input type="radio" id="offline-order-history-switch" name="order-switch" value="OFFLINE ORDER">
+              <label class="order-history-switch" id="offline-order-switch-label" for="offline-order-history-switch">INSTORE ORDER</label>
+            </div>
+            <div class="on-line-wrapper">
+              {%- if customer.orders.size == 0 -%}
+              <div class="Segment">
+                <div class="Segment__Content">
+                  <p>{{ "customer.account.no_orders_content" | t }}</p>
+                </div>
+              </div>
+              {%- else -%} {%- paginate customer.orders by 25 -%}
+              <div class="TableWrapper" id="order-table-desktop-online">
+                <table class="AccountTable Table Table--large">
+                  <thead class="Text--subdued">
+                    <tr>
+                      <th>{{ "customer.orders.order_number" | t }}</th>
+                      <th>{{ "customer.orders.date" | t }}</th>
+                      <th>Store</th>
+                      <!-- <th>{{ "customer.orders.payment_status" | t }}</th>
+                      <th>{{ "customer.orders.fulfillment_status" | t }}</th> -->
+                      <th>
+                        {{ "customer.orders.total" | t }}
+                      </th>
+                      <th class="Text--alignRight">
+                        Return
+                      </th>
+                    </tr>
+                  </thead>
+  
+                  <tbody class="Heading u-h7">
+                   {%- for order in customer.orders -%}
+                    <tr>
+                      <td>
+                        <a href="{{ order.customer_url }}" class="Link Link--underline">{{
+                          order.name
+                        }}</a>
+                      </td>
+                      <td>
+                        {{ order.created_at | date: format:"month_day_year" }}
+                      </td>
+                      <td>BoardCollective</td>
+                      <!-- <td>{{ order.financial_status_label }}</td> -->
+                      <!-- <td>{{ order.fulfillment_status_label }}</td> -->
+                      <td>
+                        {{ order.total_price | money_without_trailing_zeros }}
+                      </td>
+                      <td class="Text--alignRight">
+                        <a class="order-returns-link return-allowed" href="https://boardcollective.loopreturns.com/#/">Create Return</a>
+                      </td>
+                    </tr>
+                   {%- endfor -%}
+                  </tbody>
+                </table>
+              </div>
+              <div id="order-cards-mobile-online">
+                <div class="order-card-mobile">
+                {%- for order in customer.orders -%}
+                
+                  <ul class='order-list-mobile'>
+                   <li>
+                     <div class="Text--subdued">Order</div>
+                     <div>
+                       <a href="{{ order.customer_url }}">
+                         {{order.name}}
+                       </a>
+                     </div>
+                   </li>
+                   <li>
+                     <div class="Text--subdued">Date</div>
+                     <div>{{order.created_at | date: format: "month_day_year" }}</div>
+                   </li>
+                   <li>
+                     <div class="Text--subdued">Store</div>
+                     <div>Board Collective</div>
+                   </li>
+                   <!-- <li>
+                     <div class="Text--subdued">Payment Status</div>
+                     <div>{{ order.finacial_status_label }}</div>
+                   </li>
+                   <li>
+                     <div class="Text--subdued">Order Status</div>
+                     <div>{{ order.fulfillment_status_label }}</div>
+                   </li> -->
+                   <li>
+                     <div class="Text--subdued">Total</div>
+                     <div>{{ order.total_price | money_without_trailing_zeros }}</div>
+                   </li>
+                   <li>
+                     <div class="Text--subdued">Return</div>
+                     <div>
+                       <a href="https://boardcollective.loopreturns.com/#/">Create Return</a>
+                     </div>
+                   </li>
+                  </ul>
+                
+                <div class="account-divider"></div>
+                {%- endfor -%}
+              </div>
+              </div>
+  
+              {%- render 'pagination', paginate: paginate -%} {%- endpaginate -%} {%- endif -%}
+            </div>
+            <div class="off-line-wrapper">
+              <div class="TableWrapper" id="order-table-desktop">
+                <div id="order-table-desktop-loadder"></div>
+                <table class="AccountTable Table Table--large">
+                  <thead class="Text--subdued">
+                    <tr>
+                      <th>{{ "customer.orders.order_number" | t }}</th>
+                      <th>{{ "customer.orders.date" | t }}</th>
+                      <th>Store</th>
+                      <th>
+                        {{ "customer.orders.total" | t }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="Heading u-h7">
+                  </tbody>
+                </table>
+              </div>
+              <div id="order-cards-mobile">
+                <div class="order-card-mobile" id="order-card-mobile-offline"></div>
+              </div>
+              <div id="order-y2-pagination"></div>
+            </div>
+            
+          </section>
+
+          {%- if settings.enable_mates -%}
+          <section class="account-tab account-mates">
+            <section class="mates-benefits-top">
+              <div class="mates-points-container">
+                <div class="mates-info-card">
+                  <div class="info--left" id="reward-points-count">0</div>
+                  <div class="info--right">Points <br />Accumulated</div>
+                </div>
+                <div class="mates-benefits-progress">400 more points to next $10 Voucher</div>
+              </div>
+              <div class="mates-info-card">
+                <div class="info--left .account-mate-best">Mate</div>
+                <div class="info--right">Member<br />Status</div>
+              </div>
+              <div class="mates-info-text">
+                {% section 'mates-benefits-copy' %}
+              </div>
+            </section>
+            <div class="vouchers-header">Vouchers Available</div>
+            <section class="mates-benefits-vouchers">
+              <div class="mr-voucher-loading loading"></div>
+              <!-- {% for n in (1..3) %}
+              <div class="voucher--container">
+                <div class="voucher--left">
+                  <div class="left--upper">$30</div>
+                  <div class="left--lower">Off</div>
+                </div>
+                <div class="voucher--right">
+                  <div class="right--upper">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam ante a nulla ultricies porttitor eget ut tellus. Fusce vehicula at justo ut tincidunt. Cras aliquam ante a nulla ultricies porttitor eget ut tellus. Fusce vehicula at justo ut tincidunt. Lorem ipsum dolor sit amet.
+                  </div>
+                  <div class="right--lower">
+                    <a>
+                      Use Voucher
+                    </a>
+                    <div>Runs out in 30 days</div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %} -->
+            </section>
+          </section>
+          {%- endif -%}
+            
+        </div>
+      </section>
+    </div>
+
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    ADDRESS
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    <div class="PageLayout__Section PageLayout__Section--secondary" id="account-addresses">
+      <div class="Segment">
+        {%- if customer.addresses_count == 0 -%}
+        <h2 class="Segment__Title Heading u-h7">
+          {{ "customer.account.no_addresses_title" | t }}
+        </h2>
+
+        <div class="Segment__Content">
+          <p>{{ "customer.account.no_addresses_content" | t }}</p>
+
+          <div class="Segment__ButtonWrapper">
+            <a href="{{ routes.account_addresses_url }}" class="Button Button--primary">{{
+              "customer.account.manage_addresses" | t
+            }}</a>
+          </div>
+        </div>
+        {%- else -%}
+        <h2 class="Segment__Title Heading u-h7">
+          {{ "customer.account.default_address" | t }}
+        </h2>
+
+        <div class="Segment__Content">
+          {{ customer.default_address | format_address | replace: '
+          <p>', '</p>
+          <p class="AccountAddress">
+            <span>' | replace_first: '<br />', '</span><br />' }}
+          </p>
+          <div class="Segment__ButtonWrappe My-account-btnr">
+            <a href="{{ routes.account_addresses_url }}" class="Button Button--primary">{{
+              "customer.account.edit_addresses" | t
+            }}</a>
+          </div>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div style="display:none">
+    {%- form 'recover_customer_password', name: 'recover', class: 'Form Form--spacingTight', id: 'recover_customer_password', style: recover_default_visibility -%}
+    <header class="Form__Header">
+      <h1 class="Form__Title Heading u-h1">{{ 'customer.recover_password.title' | t }}</h1>
+
+      {%- unless form.posted_successfully? -%}
+        <p class="Form__Legend">{{ 'customer.recover_password.description' | t }}</p>
+      {%- endunless -%}
+    </header>
+
+    {%- if form.errors -%}
+      <p class="Form__Alert Alert Alert--error">
+        {{- form.errors.messages['form'] -}}
+      </p>
+    {%- endif -%}
+
+    {%- if form.posted_successfully? -%}
+      <p class="Form__Alert Alert Alert--success">
+        {{- 'customer.recover_password.success' | t -}}
+      </p>
+    {%- endif -%}
+
+    <div class="Form__Item">
+      <input type="email" class="Form__Input" name="email" required="required" placeholder="{{ 'customer.recover_password.email' | t }}" aria-label="{{ 'customer.recover_password.email' | t }}" autofocus>
+      <label class="Form__FloatingLabel">{{ 'customer.recover_password.email' | t }}</label>
+    </div>
+
+    <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'customer.recover_password.submit' | t }}</button>
+
+    <div class="Form__Hint Form__Hint--center">
+      <span class="Text--subdued">{{ 'customer.recover_password.login_label' | t }}</span>
+      <button type="button" class="Link Link--secondary" data-action="toggle-recover-form">{{ 'customer.recover_password.login_link' | t }}</button>
+    </div>
+  {%- endform -%}
+  </div>
+  </div>
+</div>
+
+<div id="order-details" style="display:none">
+</div>

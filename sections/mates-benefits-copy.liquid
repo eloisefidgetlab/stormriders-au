@@ -1,0 +1,26 @@
+<section class="Section mate-text">
+    <div>
+        {{ section.settings.heading }}
+        {{ section.settings.mates_text }}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Mates Benefits Copy",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Mates Heading",
+            "default": "<p>Welcome, Mate 😎<\/p>"
+        },
+        {
+            "type": "richtext",
+            "id": "mates_text",
+            "label": "Mates Text",
+            "default": "<p>Spend, earn points and get rewarded! Mates of BoardCollective will receive news and exclusive offers, be able to view order history and have access to faster checkout & tracking. And... if you're a Best Mate! You'll receive surprise & delights, birthday rewards and special offers!<\/p>"
+        }
+    ]
+}
+{% endschema %}

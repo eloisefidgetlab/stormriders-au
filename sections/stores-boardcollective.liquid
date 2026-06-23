@@ -1,0 +1,67 @@
+<section id="section-{{ section.id }}" class="shopify-section--stores-boardcollective">
+  <div class="store-wrapper">
+    <h3>{{ section.settings.title }}</h3>
+    <h2>{{ section.settings.heading }}</h2>
+    <a href="{{ section.settings.link }}" class="Button Button--primary">{{ section.settings.button_text }}</a>
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }}.shopify-section--stores-boardcollective {
+    background: url({{ section.settings.background_mobile | img_url: '2000x' }}) center center;
+    background-size: cover;
+  }
+  
+  @media (min-width: 641px) {
+    #section-{{ section.id }}.shopify-section--stores-boardcollective {
+    background: url({{ section.settings.background | img_url: '2000x' }}) center center;
+    background-size: cover;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Stores Boardcollective",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Background image mobile"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "FIND STORE"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Store information",
+      "name": "Stores Boardcollective",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "pageDots": false,
+  "wrapAround": false,
+  "cellAlign": "center",
+  "watchCSS": true,
+  "groupCells": "100%"
+}
+{%- endcapture -%}
+
+<section class="Section section--featured-products-salt-board" data-section-id="{{ section.id }}" data-section-type="best-sellers" data-settings='{{ section_settings }}'>
+  <header class="SectionHeader SectionHeader--center">
+    <h3>{{ section.settings.subheading }}</h3>
+    <h2>{{ section.settings.title }}</h2>
+  </header>
+
+  <div class="ProductList" data-flickity='{{ flickity_options }}'>
+    {%- for block in section.blocks -%}
+      {%- assign product = all_products[block.settings.product] -%}
+      <div class="Carousel__Cell--item">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'large' }}" alt="product-image">
+          <span class="brand">{{ product.vendor }}</span>
+          <span class="name">{{ product.title }}</span>
+          <span class="price">{{ product.price | money }}</span>
+        </a>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {% if section.settings.button_text %}
+    <a href="{{ section.settings.button_link }}" class="Button best-sellers-button">{{ section.settings.button_text }}</a>
+  {% endif %}
+
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured product Boardcollective - Dynamic"
+    }
+  ]
+}
+{% endschema %}
