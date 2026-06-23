@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "current_store": "Stormriders",
@@ -184,8 +193,8 @@
             "type": "newsletter",
             "settings": {
               "title": "Newsletter",
-              "content": "<p>Subscribe for the latest news, products and deals.</p>",
-              "klaviyo_form_id": ""
+              "content": "",
+              "klaviyo_form_id": "R9mLif"
             }
           }
         },
@@ -1391,259 +1400,6 @@
           "title": "Blog posts",
           "button_link": "shopify://blogs/news",
           "button_text": "View all articles"
-        }
-      },
-      "gp-section-609960341060715098": {
-        "type": "gp-section-609960341060715098",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggt0OHZ8j8D_label": "<p>SHOP NOW</p>",
-          "ggl93QHqpFO_label": "<p>SHOP NOW</p>"
-        }
-      },
-      "gp-section-609856168742880174": {
-        "type": "gp-section-609856168742880174",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggsqlDn0r6v_label": "<p>SHOP NOW</p>",
-          "gg8OSdSeNOX_label": "<p>SHOP NOW</p>"
-        }
-      },
-      "gp-section-609856168743469998": {
-        "type": "gp-section-609856168743469998",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggvISYEJbck_childItem_0": "<p>ALL</p>",
-          "ggvISYEJbck_childItem_1": "<p><span style=\"font-size:14px;\">WOMENS</span></p>",
-          "ggvISYEJbck_childItem_2": "<p>MENS</p>",
-          "ggp_2Mipw-__text": "<p><span style=\"font-size:12px;\">WORSHIP</span></p>",
-          "ggXwbyHpfRF_text": "<p><span style=\"font-size:14px;\">Coed Striped Long Sleeve Polo</span></p>",
-          "gg4cATQaaCI_text": "<p><span style=\"font-size:12px;\">$100.00</span></p>",
-          "gg46Zz1pWF1_text": "<p><span style=\"font-size:12px;\">RUSTY</span></p>",
-          "ggZLWCe8VnB_text": "<p><span style=\"font-size:14px;\">White Lines Chenille Crew </span></p>",
-          "ggbLmktLIMO_text": "<p><span style=\"font-size:12px;\">$109.99</span></p>",
-          "ggrPdx4TuyM_text": "<p>ADIDAS</p>",
-          "ggV6jZinbog_text": "<p>Aloha Super Shoe</p>",
-          "gg89hSPF5hr_text": "<p><span style=\"font-size:12px;\">$180.00</span></p>",
-          "ggZmd6_rz5v_text": "<p>RUSTY</p>",
-          "ggufiUu3PTG_text": "<p><span style=\"font-size:14px;\">Freida Flare Low Rise Jeans</span></p>",
-          "gg33cjk1Tqh_text": "<p><span style=\"font-size:12px;\">$139.99</span></p>",
-          "ggves8Gn86L_text": "<p><span style=\"font-size:12px;\">RUSTY</span></p>",
-          "ggUUlhiNc05_text": "<p>Flip Daddy 2.0 Jean</p>",
-          "ggP1Z90Juj9_text": "<p><span style=\"font-size:12px;\">$139.99</span></p>",
-          "ggiSzJrgYuJ_text": "<p><span style=\"font-size:12px;\">WORSHIP</span></p>",
-          "ggOiccZm40I_text": "<p>Coed Nylon Track Pant</p>",
-          "ggqoG-pBY23_text": "<p><span style=\"font-size:12px;\">$120.00</span></p>",
-          "gg6_j922_Vr_text": "<p><span style=\"font-size:12px;\">VOLCOM</span></p>",
-          "ggKXfCrz12b_text": "<p><span style=\"font-size:14px;\">Beeggy Denim Pants</span></p>",
-          "ggATCsYmFhK_text": "<p><span style=\"font-size:12px;\">$120.00</span></p>",
-          "gg4u9K2hWfk_text": "<p><span style=\"font-size:12px;\">BRIXTON</span></p>",
-          "gg6l-DirPo3_text": "<p>Waylon Overshirt</p>",
-          "ggpjqc_cCAl_text": "<p><span style=\"font-size:12px;\">$99.95</span></p>",
-          "ggqwA-riY4H_label": "<p><span style=\"font-size:14px;\">VIEW ALL</span></p>",
-          "ggNpfGvfLEe_text": "<p><span style=\"font-size:12px;\">WORSHIP</span></p>",
-          "ggYwqflj_ac_text": "<p>Coed Striped Long Sleeve Polo</p>",
-          "gg7i01Edx3D_text": "<p><span style=\"font-size:12px;\">$100.00</span></p>",
-          "ggU7ZuBfkHz_text": "<p>VOLCOM</p>",
-          "ggNdwAHo0cj_text": "<p>Stoned Boyfriend Low Rise Jean</p>",
-          "ggAgV0x_P-G_text": "<p><span style=\"font-size:12px;\">$100.00</span></p>",
-          "gg6w-dN3keP_text": "<p><span style=\"font-size:12px;\">RUSTY</span></p>",
-          "ggZADwRP-Rf_text": "<p><span style=\"font-size:14px;\">Freida Flare Low Rise Jeans </span></p>",
-          "gg2nC30drw1_text": "<p><span style=\"font-size:12px;\">$139.99</span></p>",
-          "gglf6wpIT0z_text": "<p>VOLCOM</p>",
-          "ggfJC2h7A2Y_text": "<p>Beeggy Denim Pants</p>",
-          "ggRlt5M1Swl_text": "<p><span style=\"font-size:12px;\">$120.00</span></p>",
-          "ggHfYChweTN_text": "<p>WORSHIP</p>",
-          "ggZQVF_DVNo_text": "<p><span style=\"font-size:14px;\">Coed Nylon Track Pant</span></p>",
-          "ggcq3y1HP_f_text": "<p><span style=\"font-size:12px;\">$120.00</span></p>",
-          "ggjDTKXsV-S_text": "<p><span style=\"font-size:12px;\">ADIDAS</span></p>",
-          "ggeBOrrc4Lg_text": "<p><span style=\"font-size:14px;\">Aloha Super Shoe</span></p>",
-          "ggTINmxxE_M_text": "<p><span style=\"font-size:12px;\">$180.00</span></p>",
-          "ggu1IpTCqpW_text": "<p><span style=\"font-size:12px;\">VOLCOM</span></p>",
-          "gga99quybMV_text": "<p><span style=\"font-size:14px;\">Sweeterry Crew</span></p>",
-          "ggCuIuT4yLd_text": "<p><span style=\"font-size:12px;\">$80.00</span></p>",
-          "ggrbwXJUw1Q_text": "<p><span style=\"font-size:12px;\">RHYTHM</span></p>",
-          "gg4az2S10hz_text": "<p><span style=\"font-size:14px;\">Lucy Check Halter Vest</span></p>",
-          "ggX3DkchqGj_text": "<p><span style=\"font-size:12px;\">$69.99</span></p>",
-          "gg5fdOrEcli_label": "<p><span style=\"font-size:14px;\">VIEW ALL</span></p>",
-          "ggXLWpg55Nw_text": "<p><span style=\"font-size:12px;\">RUSTY</span></p>",
-          "ggvmcLGDElU_text": "<p><span style=\"font-size:14px;\">Flip Daddy 2.0 Jean</span></p>",
-          "ggmyacqJCoM_text": "<p><span style=\"font-size:12px;\">$139.99</span></p>",
-          "ggKcbpBLOzx_text": "<p><span style=\"font-size:12px;\">RUSTY</span></p>",
-          "gg6xsgQ2MWx_text": "<p><span style=\"font-size:14px;\">White Lines Chenille Crew</span></p>",
-          "ggFEqk3JMwg_text": "<p><span style=\"font-size:12px;\">$109.99</span></p>",
-          "ggIJ2iPSH6X_text": "<p>BRIXTON</p>",
-          "ggTmAcTs4Od_text": "<p>Waylon Overshirt</p>",
-          "ggCRWoSXsWP_text": "<p><span style=\"font-size:12px;\">$99.95</span></p>",
-          "ggYoHlCUI4w_text": "<p>RUSTY</p>",
-          "ggTWmUCgiZD_text": "<p><span style=\"font-size:14px;\">Flip Daddy Taped Pant</span></p>",
-          "ggy9j7hI4kg_text": "<p><span style=\"font-size:12px;\">$129.99</span></p>",
-          "ggYW95OQBTG_text": "<p><span style=\"font-size:12px;\">WORSHIP</span></p>",
-          "ggeWVXcgpvl_text": "<p>Glazed and Confused Short Sleeve Shirt</p>",
-          "gg0OzuxeHA7_text": "<p><span style=\"font-size:12px;\">$100.00</span></p>",
-          "ggeiSbMcr8j_text": "<p>RUSTY</p>",
-          "ggGskIwObuG_text": "<p>Turbo Baggy Jean</p>",
-          "gg-3jlFsmKF_text": "<p><span style=\"font-size:12px;\">$139.99</span></p>",
-          "ggZfT6jOMnT_text": "<p><span style=\"font-size:12px;\">VOLCOM</span></p>",
-          "ggnUGKEjY4T_text": "<p><span style=\"font-size:14px;\">Vorta Denim Jean</span></p>",
-          "ggnya7tUx0R_text": "<p><span style=\"font-size:12px;\">$100.00</span></p>",
-          "ggI_QGDz_Kd_text": "<p><span style=\"font-size:12px;\">VOLCOM</span></p>",
-          "ggdxHXCtjcN_text": "<p>Sunster Short Sleeve Tee</p>",
-          "gg_x72GJd3l_text": "<p><span style=\"font-size:12px;\">$55.00</span></p>",
-          "ggu4oD3uUO__label": "<p><span style=\"font-size:14px;\">VIEW ALL</span></p>"
-        }
-      },
-      "gp-section-609856168743535534": {
-        "type": "gp-section-609856168743535534",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggWJRCojevu_label": "<p>SHOP NOW</p>",
-          "ggJSKt_TJDm_label": "<p>SHOP YETI</p>",
-          "ggZ0-wUviGO_label": "<p>SHOP NOW</p>",
-          "gg_kRtzGHQT_label": "<p>SHOP YETI</p>"
-        }
-      },
-      "gp-section-609856168743273390": {
-        "type": "gp-section-609856168743273390",
-        "settings": {
-          "section_preload": "false",
-          "checksum": ""
-        }
-      },
-      "gp-section-609856168743338926": {
-        "type": "gp-section-609856168743338926",
-        "settings": {
-          "section_preload": "false",
-          "checksum": ""
-        }
-      },
-      "gp-section-609856168743207854": {
-        "type": "gp-section-609856168743207854",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggDBZ7f7SFd_text": "<p><span style=\"font-size:12px;\">ADIDAS </span></p>",
-          "ggsX6j3s0Rj_text": "<p><span style=\"font-size:14px;\">Gazelle Adv Shoe</span></p>",
-          "ggN6r0PLeai_text": "<p><span style=\"font-size:12px;\">$170</span></p>",
-          "gghCv3_BYYe_text": "<p><span style=\"font-size:12px;\">HAVAIANAS</span></p>",
-          "gggmnife2PQ_text": "<p><span style=\"font-size:14px;\">Slim Square</span></p>",
-          "gg5AwV3KO_F_text": "<p><span style=\"font-size:12px;\">$44.99</span></p>",
-          "ggETmO3NsU1_text": "<p><span style=\"font-size:12px;\">ADIDAS</span></p>",
-          "ggwSrYm3FJk_text": "<p><span style=\"font-size:14px;\">Samba Adv Shoe</span></p>",
-          "ggG2BDA71MU_text": "<p><span style=\"font-size:12px;\">$170</span></p>",
-          "gg2PNW8P9fp_text": "<p>HAVAIANAS</p>",
-          "ggxi5CP681e_text": "<p><span style=\"font-size:14px;\">Slim Square</span></p>",
-          "ggG4BSYdzlq_text": "<p><span style=\"font-size:12px;\">$44.99</span></p>",
-          "ggB_OcUBqR6_text": "<p><span style=\"font-size:12px;\">REEBOK</span></p>",
-          "gg5njKAx68T_text": "<p><span style=\"font-size:14px;\">Reebok Court Retro Shoe</span></p>",
-          "ggGwUg4WZHJ_text": "<p><span style=\"font-size:12px;\">$120</span></p>",
-          "ggC6PgZJ6rk_text": "<p>BIRKENSTOCK</p>",
-          "ggq-8pMBD1o_text": "<p>Arizona Birko-Flor Regular</p>",
-          "ggQ2hPlAn37_text": "<p><span style=\"font-size:12px;\">$193</span></p>",
-          "gg3uUb4c_7t_text": "<p><span style=\"font-size:12px;\">REEBOK</span></p>",
-          "ggylp7KOGNu_text": "<p><span style=\"font-size:14px;\">Reebok Court Retro Shoe</span></p>",
-          "ggGa3lrPWi3_text": "<p><span style=\"font-size:12px;\">$120</span></p>",
-          "ggxe0S_ZR3g_text": "<p>CONVERSE</p>",
-          "ggwruRmEda4_text": "<p><span style=\"font-size:14px;\">Chuck Taylor Dainty Lucky Low Shoe</span></p>",
-          "ggxfltBE0KK_text": "<p><span style=\"font-size:12px;\">$120</span></p>"
-        }
-      },
-      "gp-section-609856168743404462": {
-        "type": "gp-section-609856168743404462",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggPmo99aYM4_text": "<p><span style=\"font-size:30px;\">SHOP BY CATEGORY</span></p>",
-          "gga5Wzb0y9__text": "<p><span style=\"font-size:18px;\">SHOP BY CATEGORY</span></p>"
-        }
-      },
-      "gp-section-609856168743142318": {
-        "type": "gp-section-609856168743142318",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggP3H8RnmBS_label": "<p>JOIN OUR LOYALTY PROGRAM</p>"
-        }
-      },
-      "gp-section-609856168743076782": {
-        "type": "gp-section-609856168743076782",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggSBh_JHL1X_label": "<p>JOIN OUR LOYALTY PROGRAM</p>"
-        }
-      },
-      "gp-section-609856168742945710": {
-        "type": "gp-section-609856168742945710",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggrGWSobuSz_text": "<span style=\"font-size:17px;\">shop our instagram | @boardcollective_</span>",
-          "ggSXeWpqDN5_text": "<span style=\"font-size:30px;\">SHOP OUR INSTAGRAM | @BOARDCOLLECTIVE</span>",
-          "ggbqUosIzLs_text": "<span style=\"font-size:20px;\">SHOP OUR INSTAGRAM | @BOARDCOLLECTIVE</span>"
-        }
-      },
-      "gp-section-609856168743011246": {
-        "type": "gp-section-609856168743011246",
-        "settings": {
-          "section_preload": "false",
-          "checksum": "",
-          "ggFxXu2SgK1_text": "SHOP",
-          "ggiJH8s6zo5_text": "<p><a href=\"https://boardcollective.com.au/collections/new-in-1\"><span style=\"color:#000000;\">SHOP ALL</span></a></p>",
-          "ggi4z2CgsS__text": "<p><a href=\"https://boardcollective.com.au/collections/mens-clothing\"><span style=\"color:#000000;\">MENS</span></a></p>",
-          "ggejtCk89E__text": "<p><a href=\"https://boardcollective.com.au/collections/womens-clothing\"><span style=\"color:#000000;\">WOMENS</span></a></p>",
-          "ggfSWUKed7p_text": "<p><a href=\"https://boardcollective.com.au/collections/kids\"><span style=\"color:#000000;\">KIDS</span></a></p>",
-          "ggygyTFIUlk_text": "<p><a href=\"https://boardcollective.com.au/collections/footwear-1\"><span style=\"color:#000000;\">FOOTWEAR</span></a></p>",
-          "ggg-WU2JFVU_text": "<p><a href=\"https://boardcollective.com.au/pages/surf\"><span style=\"color:#000000;\">SURF</span></a></p>",
-          "gghFFGwxQgD_text": "<p><a href=\"https://boardcollective.com.au/pages/skate\"><span style=\"color:#000000;\">SKATE</span></a></p>",
-          "gg54-4gZQri_text": "<p><a href=\"https://boardcollective.com.au/pages/snow\"><span style=\"color:#000000;\">SNOW</span></a></p>",
-          "ggZIz3zzwui_text": "<p><a href=\"https://boardcollective.com.au/products/boardcollective-egift-card\"><span style=\"color:#000000;\">GIFT CARDS</span></a></p>",
-          "ggwoCuxI6sQ_text": "CUSTOMER CARE",
-          "ggiak6khy4S_text": "<p><a href=\"https://boardcollective.com.au/account/login?return_url=%2Faccount\"><span style=\"color:#000000;\">MY ACCOUNT</span></a></p>",
-          "ggHvYaUYdeR_text": "<p><a href=\"https://boardcollective.com.au/pages/faqs\"><span style=\"color:#000000;\">FAQ'S</span></a></p>",
-          "ggNfCwOyP2a_text": "<p><a href=\"https://boardcollective.com.au/pages/shipping\"><span style=\"color:#000000;\">SHIPPING</span></a></p>",
-          "ggILQOBDLoe_text": "<p><a href=\"https://boardcollective.com.au/pages/returns\"><span style=\"color:#000000;\">RETURNS</span></a></p>",
-          "ggyuKBaBuEv_text": "<p><a href=\"https://boardcollective.loopreturns.com/#/\"><span style=\"color:#000000;\">CREATE A RETURN</span></a></p>",
-          "gg8cqDMBejX_text": "<p><a href=\"https://boardcollective.com.au/pages/privacy-policy\"><span style=\"color:#000000;\">PRIVACY POLICY</span></a></p>",
-          "gggewnPuwE3_text": "<p><a href=\"https://boardcollective.com.au/pages/terms\"><span style=\"color:#000000;\">TERMS</span></a></p>",
-          "gg4AqBysv0s_text": "ABOUT",
-          "ggb1IRFG7yB_text": "<p><a href=\"https://boardcollective.com.au/pages/our-story\"><span style=\"color:#000000;\">OUR STORY</span></a></p>",
-          "ggBOPLGyOWX_text": "<p><a href=\"https://boardcollective.com.au/pages/careers\"><span style=\"color:#000000;\">CAREERS</span></a></p>",
-          "ggHpSDtVV1N_text": "<p><a href=\"https://boardcollective.com.au/pages/contact\"><span style=\"color:#000000;\">CONTACT US</span></a></p>",
-          "gguCMSRVT5N_text": "<p><a href=\"https://boardcollective.com.au/pages/store-locator\"><span style=\"color:#000000;\">STORE LOCATOR</span></a></p>",
-          "ggmhrvsRGXR_text": "<p><a href=\"https://boardcollective.com.au/blogs/blogs\"><span style=\"color:#000000;\">BLOG</span></a></p>",
-          "ggS3_r8PG4K_text": "<p><a href=\"https://boardcollective.com.au/pages/surf-check\"><span style=\"color:#000000;\">SURF CHECK</span></a></p>",
-          "gguQsKU7att_text": "<p>THE ONLINE HOME OF</p>",
-          "ggf3eQjMBFC_text": "NEVER MISS OUT",
-          "ggdKP7jy2Gu_childItem_0": "<p><span style=\"font-size:12px;\">SHOP</span></p>",
-          "ggdKP7jy2Gu_childItem_1": "<p><span style=\"font-size:12px;\">CUSTOMER CARE</span></p>",
-          "ggdKP7jy2Gu_childItem_2": "<p><span style=\"font-size:12px;\">ABOUT</span></p>",
-          "ggaiqWyoUlG_text": "<p><a href=\"https://boardcollective.com.au/collections/new-in-1\"><span style=\"font-size:12px;\">SHOP ALL</span></a></p>",
-          "ggNXFQVYG1l_text": "<p><a href=\"https://boardcollective.com.au/collections/mens-clothing\"><span style=\"font-size:12px;\">MENS</span></a></p>",
-          "ggzaZlZ7TpV_text": "<p><a href=\"https://boardcollective.com.au/collections/womens-clothing?sort=extra-sort1-descending\"><span style=\"font-size:12px;\">WOMENS</span></a></p>",
-          "ggZ73PUhc6w_text": "<p><a href=\"https://boardcollective.com.au/collections/kids\"><span style=\"font-size:12px;\">KIDS</span></a></p>",
-          "ggEjCKTDBU-_text": "<p><a href=\"https://boardcollective.com.au/collections/footwear-1\"><span style=\"font-size:12px;\">FOOTWEAR</span></a></p>",
-          "ggLeaWnmDdK_text": "<p><a href=\"https://boardcollective.com.au/pages/surf\"><span style=\"font-size:12px;\">SURF</span></a></p>",
-          "ggy8jb810h2_text": "<p><a href=\"https://boardcollective.com.au/pages/skate\"><span style=\"font-size:12px;\">SKATE</span></a></p>",
-          "ggAkHiSbX_N_text": "<p><a href=\"https://boardcollective.com.au/pages/snow\"><span style=\"font-size:12px;\">SNOW</span></a></p>",
-          "gg2zbkz7CGq_text": "<p><a href=\"https://boardcollective.com.au/account/login?return_url=%2Faccount\">MY ACCOUNT</a></p>",
-          "gggLaHOWrwq_text": "<p><a href=\"https://boardcollective.com.au/pages/faqs\">FAQ'S</a></p>",
-          "ggeur_6pJLl_text": "<p><a href=\"https://boardcollective.com.au/pages/shipping\">SHIPPING</a></p>",
-          "ggLrc4HmoEg_text": "<p><a href=\"https://boardcollective.com.au/pages/returns\">RETURNS</a></p>",
-          "ggmJK09mwmz_text": "<p><a href=\"https://boardcollective.loopreturns.com/#/\">CREATE A RETURN</a></p>",
-          "gg-ktXhCBB7_text": "<p><a href=\"https://boardcollective.com.au/pages/privacy-policy\">PRIVACY POLICY</a></p>",
-          "ggEbVKJkHlM_text": "<p><a href=\"https://boardcollective.com.au/pages/terms\">TERMS</a></p>",
-          "ggbrSacrdW-_text": "<p><a href=\"https://boardcollective.com.au/pages/temporarily-unavailable\">GIFT VOUCHERS</a></p>",
-          "ggaZ8cPqXD3_text": "<p><a href=\"https://boardcollective.com.au/pages/our-story\"><span style=\"font-size:12px;\">OUR STORY</span></a></p>",
-          "ggyMrBDASPz_text": "<p><a href=\"https://boardcollective.com.au/pages/careers\"><span style=\"font-size:12px;\">CAREERS</span></a></p>",
-          "ggRbRc--DWi_text": "<p><a href=\"https://boardcollective.com.au/pages/contact\"><span style=\"font-size:12px;\">CONTACT US</span></a></p>",
-          "ggMoFE1uW0Z_text": "<p><a href=\"https://boardcollective.com.au/pages/store-locator\"><span style=\"font-size:12px;\">STORE LOCATOR</span></a></p>",
-          "ggLLLLFOT69_text": "<p><a href=\"https://boardcollective.com.au/blogs/blogs\"><span style=\"font-size:12px;\">BLOG</span></a></p>",
-          "gga2l_O-GxY_text": "<p><a href=\"https://boardcollective.com.au/pages/surf-check\"><span style=\"font-size:12px;\">SURF CHECK</span></a></p>"
         }
       }
     },
