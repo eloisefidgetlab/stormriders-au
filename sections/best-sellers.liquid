@@ -8,6 +8,7 @@
   "watchCSS": true,
   "dragThreshold": 8,
   "groupCells": true,
+  "imagesLoaded": true,
   "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
 }
 {%- endcapture -%}
@@ -22,7 +23,7 @@
     <h2>{{ section.settings.title }}</h2>
   </header>
 
-  <div class="ProductList ProductList--carousel Carousel" data-flickity="{{ flickity_options | escape }}">
+  <div class="ProductList ProductList--carousel Carousel" data-flickity-config="{{ flickity_options | escape }}">
     {%- for block in section.blocks -%}
       <div class="Carousel__Cell">
         <div class="Carousel__Cell--item">
