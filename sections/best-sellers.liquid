@@ -8,7 +8,6 @@
   "watchCSS": true,
   "dragThreshold": 8,
   "groupCells": true,
-  "imagesLoaded": true,
   "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
 }
 {%- endcapture -%}
@@ -23,12 +22,17 @@
     <h2>{{ section.settings.title }}</h2>
   </header>
 
-  <div class="ProductList ProductList--carousel Carousel" data-flickity-config="{{ flickity_options | escape }}">
+  <div class="ProductList ProductList--carousel Carousel" data-flickity="{{ flickity_options | escape }}">
     {%- for block in section.blocks -%}
       <div class="Carousel__Cell">
         <div class="Carousel__Cell--item">
           <a href="{{ block.settings.product_link }}">
-            <img src="{{ block.settings.image | img_url: 'large' }}" alt="product-image">
+            <img
+              src="{{ block.settings.image | img_url: 'large' }}"
+              alt="product-image"
+              width="480"
+              height="480"
+            >
           </a>
           <span class="brand">{{ block.settings.brand }}</span>
           <span class="name">{{ block.settings.product_name }}</span>
@@ -44,6 +48,60 @@
     </a>
   {% endif %}
 </section>
+
+<script>
+  (function () {
+    function initBestSellers(container) {
+      var carousel = container.querySelector('[data-flickity]');
+      if (!carousel) return;
+
+      // Destroy any existing Flickity instance before re-initialising
+      var existing = window.Flickity ? Flickity.data(carousel) : null;
+      if (existing) existing.destroy();
+
+      if (window.Flickity) {
+        try {
+          var options = JSON.parse(carousel.getAttribute('data-flickity'));
+          new Flickity(carousel, options);
+        } catch (e) {}
+      }
+    }
+
+    document.addEventListener('shopify:section:load', function (event) {
+      var container = event.target.querySelector('[data-section-type="best-sellers"]');
+      if (container) initBestSellers(container);
+    });
+
+    // Resize Flickity after images load so cells are measured correctly
+    document.addEventListener('DOMContentLoaded', function () {
+      var section = document.querySelector('[data-section-type="best-sellers"]');
+      if (!section) return;
+      var carousel = section.querySelector('[data-flickity]');
+      if (!carousel) return;
+      var images = carousel.querySelectorAll('img');
+      var loaded = 0;
+      if (!images.length) return;
+      images.forEach(function (img) {
+        if (img.complete) {
+          loaded++;
+          if (loaded === images.length) triggerResize(carousel);
+        } else {
+          img.addEventListener('load', function () {
+            loaded++;
+            if (loaded === images.length) triggerResize(carousel);
+          });
+        }
+      });
+    });
+
+    function triggerResize(carousel) {
+      if (window.Flickity) {
+        var flkty = Flickity.data(carousel);
+        if (flkty) flkty.resize();
+      }
+    }
+  })();
+</script>
 
 {% schema %}
 {
