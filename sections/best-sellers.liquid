@@ -12,30 +12,36 @@
 }
 {%- endcapture -%}
 
-<section class="Section Section--best-sellers" data-section-id="{{ section.id }}" data-section-type="best-sellers" data-settings='{{ section_settings }}'>
+<section
+  class="Section Section--best-sellers"
+  data-section-id="{{ section.id }}"
+  data-section-type="best-sellers"
+  data-settings="{{ section_settings }}"
+>
   <header class="SectionHeader SectionHeader--center">
     <h2>{{ section.settings.title }}</h2>
   </header>
 
-    <div class="ProductList ProductList--carousel Carousel" data-flickity='{{ flickity_options }}'>
-      {%- for block in section.blocks -%}
-        <div class="Carousel__Cell">
-          <div class="Carousel__Cell--item">
-            <a href="{{ block.settings.product_link }}">
-              <img src="{{ block.settings.image | img_url: 'large' }}" alt="product-image">
-            </a>
-            <span class="brand">{{ block.settings.brand }}</span>
-            <span class="name">{{ block.settings.product_name }}</span>
-            <span class="price">{{ block.settings.price }}</span>
-          </div>
+  <div class="ProductList ProductList--carousel Carousel" data-flickity="{{ flickity_options | escape }}">
+    {%- for block in section.blocks -%}
+      <div class="Carousel__Cell">
+        <div class="Carousel__Cell--item">
+          <a href="{{ block.settings.product_link }}">
+            <img src="{{ block.settings.image | img_url: 'large' }}" alt="product-image">
+          </a>
+          <span class="brand">{{ block.settings.brand }}</span>
+          <span class="name">{{ block.settings.product_name }}</span>
+          <span class="price">{{ block.settings.price }}</span>
         </div>
-      {%- endfor -%}
-    </div>
+      </div>
+    {%- endfor -%}
+  </div>
 
-    {% if section.settings.button_text %}
-      <a href="{{ section.settings.button_link }}" class="Button best-sellers-button">{{ section.settings.button_text }}</a>
-    {% endif %}
-
+  {% if section.settings.button_text %}
+    <a href="{{ section.settings.button_link }}" class="Button best-sellers-button">
+      {{- section.settings.button_text -}}
+    </a>
+  {% endif %}
 </section>
 
 {% schema %}
