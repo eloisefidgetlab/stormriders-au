@@ -1214,16 +1214,7 @@
               "brand": "BILLABONG",
               "product_name": "Immortal Flannel",
               "price": "$109.99",
-              "product_link": ""
-            }
-          },
-          "product_tcRW96": {
-            "type": "product",
-            "settings": {
-              "brand": "",
-              "product_name": "",
-              "price": "",
-              "product_link": ""
+              "product_link": "https://boardcollective.com.au/products/billabong-immortal-flannel-black"
             }
           },
           "product_6czBkE": {
@@ -1259,7 +1250,6 @@
         },
         "block_order": [
           "product_gPxaHT",
-          "product_tcRW96",
           "product_6czBkE",
           "product_9PRr7D",
           "product_izGPUt"
