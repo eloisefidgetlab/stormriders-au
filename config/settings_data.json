@@ -1240,10 +1240,11 @@
           "product_GRR8dN": {
             "type": "product",
             "settings": {
-              "brand": "",
-              "product_name": "",
-              "price": "",
-              "product_link": ""
+              "image": "shopify://shop_images/Web_banners_1_4c8221f9-a507-4530-a2e6-04a27da376b4.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Full Stone Sock 3PK - White",
+              "price": "$20",
+              "product_link": "https://boardcollective.com.au/products/volcom-full-stone-crew-socks-3pk-white"
             }
           },
           "product_gPxaHT": {
