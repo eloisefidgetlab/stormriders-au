@@ -1230,10 +1230,11 @@
           "product_L8zTf9": {
             "type": "product",
             "settings": {
-              "brand": "",
-              "product_name": "",
-              "price": "",
-              "product_link": ""
+              "image": "shopify://shop_images/3_66c3e385-9945-4290-974e-70512fea5261.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Modown Denim Jean",
+              "price": "$100",
+              "product_link": "https://boardcollective.com.au/products/a1931900-bdl"
             }
           },
           "product_GRR8dN": {
