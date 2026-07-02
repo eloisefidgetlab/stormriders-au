@@ -216,24 +216,24 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "image_fMyD9g": {
+          "image_RhPjWK": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/BC_SALE_-_WEB_DESKTOP_6dc62f4a-3726-4a6e-a200-2c00fda6a89b.jpg",
-              "mobile_image": "shopify://shop_images/BC_SALE_-_WEB_MOBILE_44978dab-2098-4111-a693-a9ea37176e31.jpg",
+              "image": "shopify://shop_images/Web_banner.jpg",
+              "mobile_image": "shopify://shop_images/Mobile_banner.jpg",
               "apply_overlay": false,
               "content_position": "bottomCenter",
               "subheading": "",
               "title": "",
-              "button_1_text": "",
-              "button_1_link": "",
+              "button_1_text": "Denim & Pants",
+              "button_1_link": "https://boardcollective.com.au/collections/volcom-denim-pants",
               "button_2_text": "",
               "button_2_link": ""
             }
           }
         },
         "block_order": [
-          "image_fMyD9g"
+          "image_RhPjWK"
         ],
         "custom_css": [
           "section .Slideshow__Content .SectionHeader {display: flex; flex-direction: column-reverse; gap: 15px;}",
@@ -601,6 +601,7 @@
       },
       "1612914902547e6a54": {
         "type": "shop-board-collection",
+        "disabled": true,
         "custom_css": [
           "section > div {margin-top: 0;}"
         ],
@@ -1149,6 +1150,7 @@
           "98bbe1e0-7087-4290-aa86-550da764447d",
           "1fcaf491-6d08-4423-8001-2cdae69df06c"
         ],
+        "disabled": true,
         "settings": {
           "title": "USP Section"
         }
@@ -1208,46 +1210,56 @@
           "product_gPxaHT": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/billabongubyft003160019black1_600x_1d567ec0-46d5-45e2-8f70-9cdef8f62f52.jpg",
+              "image": "shopify://shop_images/billabongubywt001590019black1.jpg",
               "brand": "BILLABONG",
-              "product_name": "Chrome Zip Thru Hood",
-              "price": "$99.99",
-              "product_link": "https://boardcollective.com.au/collections/mens-new-in/products/ubyft00316-0019"
+              "product_name": "Immortal Flannel",
+              "price": "$109.99",
+              "product_link": ""
+            }
+          },
+          "product_tcRW96": {
+            "type": "product",
+            "settings": {
+              "brand": "",
+              "product_name": "",
+              "price": "",
+              "product_link": ""
             }
           },
           "product_6czBkE": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/thrillswta25901hcabernet1_600x_3c540124-abd8-432e-afec-b539171df075.jpg",
-              "brand": "THRILLS",
-              "product_name": "Blair Bias Slip Dress",
-              "price": "$149.99",
-              "product_link": "https://boardcollective.com.au/collections/womens-new-in-1/products/wta25-901h"
+              "image": "shopify://shop_images/ripcurl0flwfl2924darkplum1.jpg",
+              "brand": "RUSTY",
+              "product_name": "Nova Vest Polar Fleece",
+              "price": "$109.99",
+              "product_link": "https://boardcollective.com.au/products/rip-curl-nova-vest-polar-fleece-dark-plum"
             }
           },
           "product_9PRr7D": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/thrillsta25113idusk1_600x_8dda3102-4109-47cf-8282-fe0ebb14d413.jpg",
-              "brand": "THRILLS",
-              "product_name": "Relax Your Eyes Oversize Fit Tee",
-              "price": "$59.99",
-              "product_link": "https://boardcollective.com.au/collections/mens-new-in/products/ta25-113i"
+              "image": "shopify://shop_images/formerffl26211mblkmerchblack1.jpg",
+              "brand": "FORMER",
+              "product_name": "Skullz Boxy Heavy Hood",
+              "price": "$159.99",
+              "product_link": ""
             }
           },
           "product_izGPUt": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/rhythm0125wkn04oatoatmeal1_600x_4492681f-e8e4-43f0-8fc0-a2c0794e1a76.jpg",
-              "brand": "RHYTHM",
-              "product_name": "Quinn Zip Knit",
-              "price": "$109.99",
-              "product_link": "https://boardcollective.com.au/collections/womens-new-in-1/products/0125w-kn04-oat"
+              "image": "shopify://shop_images/banksiacoveds262knw01bccnatcoconatural1_1.jpg",
+              "brand": "BANKSIA COVE",
+              "product_name": "Wave Knit Crew",
+              "price": "$119.99",
+              "product_link": "https://boardcollective.com.au/products/banksia-cove-wave-knit-crew-coco-natural"
             }
           }
         },
         "block_order": [
           "product_gPxaHT",
+          "product_tcRW96",
           "product_6czBkE",
           "product_9PRr7D",
           "product_izGPUt"
