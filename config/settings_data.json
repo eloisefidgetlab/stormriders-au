@@ -1179,10 +1179,11 @@
       },
       "1631146268b6dc62d0": {
         "type": "featured-collection-with-text",
+        "disabled": true,
         "settings": {
           "subtitle": "JOIN",
           "title": "MATES OF BOARDCOLLECTIVE",
-          "image": "shopify://shop_images/STR1.jpg",
+          "image": "shopify://shop_images/gempages_547951503764095880-8ee450ee-90ef-4176-b252-e707d84246ed_1.jpg",
           "button_text": "SIGN UP",
           "link": "https://boardcollective.com.au/account/register"
         }
@@ -1484,6 +1485,7 @@
           "collection_M3jMrm",
           "collection_KGPeNh"
         ],
+        "disabled": true,
         "name": "Collection list",
         "settings": {
           "image_size": "normal",
@@ -1494,6 +1496,39 @@
           "text_color": "#ffffff",
           "button_color": "#363636",
           "background_color": "#000000"
+        }
+      },
+      "slideshow_C6Ux6n": {
+        "type": "slideshow",
+        "blocks": {
+          "image_JwrKPY": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/gempages_547951503764095880-4710b030-e708-468d-bd4c-ddad0f1ce9d6_1.jpg",
+              "mobile_image": "shopify://shop_images/gempages_547951503764095880-8ee450ee-90ef-4176-b252-e707d84246ed_1.jpg",
+              "apply_overlay": false,
+              "content_position": "bottomCenter",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "JOIN OUR LOYALTY PROGRAM",
+              "button_1_link": "https://boardcollective.com.au/account/register",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "image_JwrKPY"
+        ],
+        "name": "Slideshow",
+        "settings": {
+          "show_fullscreen": false,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "button_color": "#363636",
+          "button_background": "#ffffff"
         }
       }
     },
@@ -1510,6 +1545,7 @@
       "1631146359e6a510ff",
       "blogs_redherring_6Gp8Ui",
       "1631146268b6dc62d0",
+      "slideshow_C6Ux6n",
       "1608151314ef349da2",
       "1613441460f1924bcb",
       "1639084620107018b3"
