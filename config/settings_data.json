@@ -1207,6 +1207,43 @@
       "16515545471a79502c": {
         "type": "best-sellers",
         "blocks": {
+          "product_JRFQ7B": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/3_21eabbc6-cbac-46b4-9ba9-edd6b6da159c.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Beggy Denim Pants",
+              "price": "$120",
+              "product_link": "https://boardcollective.com.au/products/volcom-beeggy-denim-pants-dusty-blue-wash"
+            }
+          },
+          "product_RqmtKD": {
+            "type": "product",
+            "settings": {
+              "brand": "",
+              "product_name": "",
+              "price": "",
+              "product_link": ""
+            }
+          },
+          "product_L8zTf9": {
+            "type": "product",
+            "settings": {
+              "brand": "",
+              "product_name": "",
+              "price": "",
+              "product_link": ""
+            }
+          },
+          "product_GRR8dN": {
+            "type": "product",
+            "settings": {
+              "brand": "",
+              "product_name": "",
+              "price": "",
+              "product_link": ""
+            }
+          },
           "product_gPxaHT": {
             "type": "product",
             "settings": {
@@ -1249,6 +1286,10 @@
           }
         },
         "block_order": [
+          "product_JRFQ7B",
+          "product_RqmtKD",
+          "product_L8zTf9",
+          "product_GRR8dN",
           "product_gPxaHT",
           "product_6czBkE",
           "product_9PRr7D",
