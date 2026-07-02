@@ -1469,12 +1469,13 @@
             "type": "collection",
             "settings": {
               "collection": "",
+              "image": "shopify://shop_images/AUTUMN_SESSIONS_2_1.jpg",
               "image_alignment": "center center",
               "content_position": "bottomLeft",
-              "subheading": "Sub-heading",
-              "title": "Collection name",
-              "button_text": "View products",
-              "button_link": "",
+              "subheading": "",
+              "title": "",
+              "button_text": "Shop Now",
+              "button_link": "https://boardcollective.com.au/collections/footwear-1",
               "apply_overlay": true
             }
           }
