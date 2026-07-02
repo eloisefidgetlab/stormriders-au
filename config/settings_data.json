@@ -1447,20 +1447,68 @@
           "button_link": "shopify://blogs/news",
           "button_text": "View all articles"
         }
+      },
+      "collection_list_8rifnj": {
+        "type": "collection-list",
+        "blocks": {
+          "collection_M3jMrm": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "image": "shopify://shop_images/AUTUMN_SESSIONS_1_da683eb3-6299-4467-8b1f-43a8accab6a5.jpg",
+              "image_alignment": "center center",
+              "content_position": "bottomCenter",
+              "subheading": "",
+              "title": "",
+              "button_text": "Shop Now",
+              "button_link": "https://boardcollective.com.au/pages/skate",
+              "apply_overlay": true
+            }
+          },
+          "collection_KGPeNh": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "image_alignment": "center center",
+              "content_position": "bottomLeft",
+              "subheading": "Sub-heading",
+              "title": "Collection name",
+              "button_text": "View products",
+              "button_link": "",
+              "apply_overlay": true
+            }
+          }
+        },
+        "block_order": [
+          "collection_M3jMrm",
+          "collection_KGPeNh"
+        ],
+        "name": "Collection list",
+        "settings": {
+          "image_size": "normal",
+          "add_spacing": true,
+          "expand_collection": false,
+          "is_top_banner": false,
+          "stack_on_mobile": true,
+          "text_color": "#ffffff",
+          "button_color": "#363636",
+          "background_color": "#000000"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
       "16515545471a79502c",
       "1612914902547e6a54",
+      "collection_list_8rifnj",
       "1615286512f597f8d3",
       "1612392567576d672c",
       "779e58c5-6742-4f1b-87dd-27e683b12213",
+      "16135305818adab64c",
       "collection_list_3eHhXq",
       "1631146359e6a510ff",
       "blogs_redherring_6Gp8Ui",
       "1631146268b6dc62d0",
-      "16135305818adab64c",
       "1608151314ef349da2",
       "1613441460f1924bcb",
       "1639084620107018b3"
