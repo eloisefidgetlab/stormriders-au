@@ -39,6 +39,7 @@
     "text_font": "nunito_sans_n4",
     "base_text_font_size": 14,
     "show_page_transition": false,
+    "show_button_transition": true,
     "show_image_zooming": false,
     "search_mode": "product,article,page",
     "product_show_price_on_hover": false,
@@ -797,6 +798,7 @@
           },
           "ea0d68ae-b6ff-48b6-901f-a0be204c5fbf": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Afends_White_Logo.png",
               "link": "https://boardcollective.com.au/collections/afends"
@@ -818,6 +820,7 @@
           },
           "item_TbemTc": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T124424.894.png",
               "link": "https://boardcollective.com.au/collections/calvin-klein"
@@ -832,6 +835,7 @@
           },
           "item_DAnHpW": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T124815.113.png",
               "link": "https://boardcollective.com.au/collections/dickies"
@@ -839,6 +843,7 @@
           },
           "f69e79ba-3880-4a12-8d42-2f600bfac7e1": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/logo.png",
               "link": "https://boardcollective.com.au/collections/dr-martens"
@@ -881,6 +886,7 @@
           },
           "item_zkbtUd": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T135443.041.png",
               "link": "https://boardcollective.com.au/collections/nude-lucy"
@@ -1442,6 +1448,7 @@
           "item_edpaDm",
           "item_Gcgqzf"
         ],
+        "disabled": true,
         "settings": {
           "subheading": "",
           "title": "Blog posts",
@@ -1537,15 +1544,15 @@
       "16515545471a79502c",
       "1612914902547e6a54",
       "collection_list_8rifnj",
+      "collection_list_3eHhXq",
+      "16135305818adab64c",
       "1615286512f597f8d3",
       "1612392567576d672c",
       "779e58c5-6742-4f1b-87dd-27e683b12213",
-      "16135305818adab64c",
-      "collection_list_3eHhXq",
+      "slideshow_C6Ux6n",
       "1631146359e6a510ff",
       "blogs_redherring_6Gp8Ui",
       "1631146268b6dc62d0",
-      "slideshow_C6Ux6n",
       "1608151314ef349da2",
       "1613441460f1924bcb",
       "1639084620107018b3"
