@@ -2,7 +2,12 @@
   "layout": "none",
   "sections": {
     "recently-viewed-products": {
-      "type": "recently-viewed-products"
+      "type": "recently-viewed-products",
+      "settings": {
+        "show_section": true,
+        "title": "Recently viewed",
+        "show_product_info": true
+      }
     }
   },
   "order": [

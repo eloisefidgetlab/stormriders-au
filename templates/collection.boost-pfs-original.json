@@ -4,10 +4,22 @@
       "type": "collection-template-boost-pfs-original"
     },
     "recently-viewed-products": {
-      "type": "recently-viewed-products"
+      "type": "recently-viewed-products",
+      "settings": {
+        "show_section": true,
+        "title": "Recently viewed",
+        "show_product_info": true
+      }
     },
     "collection-footer": {
-      "type": "collection-footer"
+      "type": "collection-footer",
+      "settings": {
+        "show_section": false,
+        "text_color": "#ffffff",
+        "apply_overlay": true,
+        "title": "Our story",
+        "content": "<p>Add your own custom content to explain your processes...</p>"
+      }
     }
   },
   "order": [

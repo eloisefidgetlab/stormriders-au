@@ -1,13 +1,36 @@
 {
   "sections": {
     "product-template": {
-      "type": "product-template"
+      "type": "product-template",
+      "settings": {
+        "show_share_buttons": true,
+        "show_vendor": true,
+        "show_color_swatch": false,
+        "show_color_carousel": false,
+        "show_quantity_selector": true,
+        "show_inventory_quantity": false,
+        "inventory_quantity_threshold": 3,
+        "image_size": "large",
+        "stack_images": true,
+        "show_thumbnails": false,
+        "enable_image_zoom": true,
+        "reviews_enabled": false
+      }
     },
     "product-recommendations": {
-      "type": "product-recommendations"
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "show_product_info": true
+      }
     },
     "recently-viewed-products": {
-      "type": "recently-viewed-products"
+      "type": "recently-viewed-products",
+      "settings": {
+        "show_section": true,
+        "title": "Recently viewed",
+        "show_product_info": true
+      }
     }
   },
   "order": [

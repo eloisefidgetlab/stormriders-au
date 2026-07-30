@@ -1,7 +1,176 @@
 {
   "sections": {
     "page-brands-template": {
-      "type": "page-brands-template"
+      "type": "page-brands-template",
+      "settings": {
+        "title": "BRANDS",
+        "text": "This is a test",
+        "link": "https://www.boardcollective.com.au"
+      },
+      "blocks": {
+        "8badb029-2f65-4847-8d00-d872c22ad583": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/bfive2.png",
+            "brand": "Bfive"
+          }
+        },
+        "a229a7f4-2e7e-45e3-ae40-787bf6bed2ae": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/js_bf81036b-e326-466e-a6bb-480023263099.png",
+            "brand": "JS"
+          }
+        },
+        "669cf30b-e6d4-49d6-82da-b37e05a62d3b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/vans_cfe57d14-0978-4114-841c-d3e6a92191a5.png",
+            "brand": "Vans"
+          }
+        },
+        "500776ef-eb64-46a2-a8c0-22afae9f625f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ripcurl_4499051e-95e2-4903-942d-3e1d578b4e0b.png",
+            "brand": ""
+          }
+        },
+        "cb0b2b1c-b0e0-44a0-80a0-8d5920348b61": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/arnette_6debf04e-8bf2-4d66-ac24-34cc54cb0aed.png",
+            "brand": ""
+          }
+        },
+        "abc3ddc9-06c8-447b-a8fc-4fa201e0ae24": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/vans_cfe57d14-0978-4114-841c-d3e6a92191a5.png",
+            "brand": ""
+          }
+        },
+        "a1e3d9cd-cb81-42f6-8231-4b6983f8e39b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/billabong_1858ba25-e015-4393-a900-19a5d17c619e.png",
+            "brand": ""
+          }
+        },
+        "6f0564ea-463b-4c4d-85a9-574b5b60600a": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/birkenstock_95e92843-58d7-4573-a0ab-93dfe08cc82e.png",
+            "brand": ""
+          }
+        },
+        "15ed3c95-5615-4a30-9b18-74fc17941689": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/santa_0f3a8840-61f2-49f9-8d34-b211a98bf261.png",
+            "brand": ""
+          }
+        },
+        "c62028d4-5c81-4290-9a81-736b28fc43e1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/bfive2.png",
+            "brand": ""
+          }
+        },
+        "e02eed76-9fc0-4215-bf53-13c38becf9fe": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/bfive2.png",
+            "brand": ""
+          }
+        },
+        "c507791e-3e65-44a7-9982-1e0aaf5fd07e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/js_bf81036b-e326-466e-a6bb-480023263099.png",
+            "brand": ""
+          }
+        },
+        "68a53cae-4745-4db0-8347-f9605fe0faa8": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/vans_cfe57d14-0978-4114-841c-d3e6a92191a5.png",
+            "brand": ""
+          }
+        },
+        "61010689-2a47-4607-83b2-71bda92cd592": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ripcurl_4499051e-95e2-4903-942d-3e1d578b4e0b.png",
+            "brand": ""
+          }
+        },
+        "8166c6d5-beee-41d2-bfa5-b6a5edc54b37": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/arnette_6debf04e-8bf2-4d66-ac24-34cc54cb0aed.png",
+            "brand": ""
+          }
+        },
+        "5c202317-0622-4a43-9d15-138a268262fe": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/vans_cfe57d14-0978-4114-841c-d3e6a92191a5.png",
+            "brand": ""
+          }
+        },
+        "d258968f-3f96-4820-8d59-d10f7cd3024c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/billabong_1858ba25-e015-4393-a900-19a5d17c619e.png",
+            "brand": ""
+          }
+        },
+        "5729fc7c-02fa-4707-9e3f-a26d46a3e75e": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/birkenstock_95e92843-58d7-4573-a0ab-93dfe08cc82e.png",
+            "brand": ""
+          }
+        },
+        "5fe3ca4b-2d7a-4ffb-bafe-ed7052c32489": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/santa_0f3a8840-61f2-49f9-8d34-b211a98bf261.png",
+            "brand": ""
+          }
+        },
+        "b284f38b-bfe1-483a-be9a-4ac890d5a094": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/bfive2.png",
+            "brand": ""
+          }
+        }
+      },
+      "block_order": [
+        "8badb029-2f65-4847-8d00-d872c22ad583",
+        "a229a7f4-2e7e-45e3-ae40-787bf6bed2ae",
+        "669cf30b-e6d4-49d6-82da-b37e05a62d3b",
+        "500776ef-eb64-46a2-a8c0-22afae9f625f",
+        "cb0b2b1c-b0e0-44a0-80a0-8d5920348b61",
+        "abc3ddc9-06c8-447b-a8fc-4fa201e0ae24",
+        "a1e3d9cd-cb81-42f6-8231-4b6983f8e39b",
+        "6f0564ea-463b-4c4d-85a9-574b5b60600a",
+        "15ed3c95-5615-4a30-9b18-74fc17941689",
+        "c62028d4-5c81-4290-9a81-736b28fc43e1",
+        "e02eed76-9fc0-4215-bf53-13c38becf9fe",
+        "c507791e-3e65-44a7-9982-1e0aaf5fd07e",
+        "68a53cae-4745-4db0-8347-f9605fe0faa8",
+        "61010689-2a47-4607-83b2-71bda92cd592",
+        "8166c6d5-beee-41d2-bfa5-b6a5edc54b37",
+        "5c202317-0622-4a43-9d15-138a268262fe",
+        "d258968f-3f96-4820-8d59-d10f7cd3024c",
+        "5729fc7c-02fa-4707-9e3f-a26d46a3e75e",
+        "5fe3ca4b-2d7a-4ffb-bafe-ed7052c32489",
+        "b284f38b-bfe1-483a-be9a-4ac890d5a094"
+      ]
     }
   },
   "order": [
