@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "page-brands-template": {
+      "type": "page-brands-template"
+    }
+  },
+  "order": [
+    "page-brands-template"
+  ]
+}

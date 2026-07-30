@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "search-template-boost-pfs-original": {
+      "type": "search-template-boost-pfs-original"
+    }
+  },
+  "order": [
+    "search-template-boost-pfs-original"
+  ]
+}

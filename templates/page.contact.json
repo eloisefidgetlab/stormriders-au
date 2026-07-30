@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "page-contact-template": {
+      "type": "page-contact-template"
+    }
+  },
+  "order": [
+    "page-contact-template"
+  ]
+}

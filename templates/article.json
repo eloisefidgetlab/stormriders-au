@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "article-template": {
+      "type": "article-template"
+    },
+    "shop-now": {
+      "type": "shop-now"
+    }
+  },
+  "order": [
+    "article-template",
+    "shop-now"
+  ]
+}

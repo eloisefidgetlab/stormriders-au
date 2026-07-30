@@ -1,0 +1,11 @@
+{
+  "layout": "none",
+  "sections": {
+    "recently-viewed-products": {
+      "type": "recently-viewed-products"
+    }
+  },
+  "order": [
+    "recently-viewed-products"
+  ]
+}

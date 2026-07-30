@@ -1,0 +1,11 @@
+{
+  "layout": "none",
+  "sections": {
+    "cart-drawer-template": {
+      "type": "cart-drawer-template"
+    }
+  },
+  "order": [
+    "cart-drawer-template"
+  ]
+}

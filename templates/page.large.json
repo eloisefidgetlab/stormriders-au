@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "page-large-template": {
+      "type": "page-large-template"
+    }
+  },
+  "order": [
+    "page-large-template"
+  ]
+}

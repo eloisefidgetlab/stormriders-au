@@ -1,0 +1,11 @@
+{
+  "layout": "none",
+  "sections": {
+    "search-ajax-template": {
+      "type": "search-ajax-template"
+    }
+  },
+  "order": [
+    "search-ajax-template"
+  ]
+}

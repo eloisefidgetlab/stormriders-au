@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "page-size-guides-template": {
+      "type": "page-size-guides-template"
+    }
+  },
+  "order": [
+    "page-size-guides-template"
+  ]
+}

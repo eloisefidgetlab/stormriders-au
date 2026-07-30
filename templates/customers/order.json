@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "customer-order-template": {
+      "type": "customer-order-template"
+    }
+  },
+  "order": [
+    "customer-order-template"
+  ]
+}

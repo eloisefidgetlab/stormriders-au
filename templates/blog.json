@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "blog-template": {
+      "type": "blog-template"
+    },
+    "shop-now": {
+      "type": "shop-now"
+    }
+  },
+  "order": [
+    "blog-template",
+    "shop-now"
+  ]
+}

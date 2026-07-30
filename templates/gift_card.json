@@ -1,0 +1,11 @@
+{
+  "layout": "gift_card",
+  "sections": {
+    "gift-card-template": {
+      "type": "gift-card-template"
+    }
+  },
+  "order": [
+    "gift-card-template"
+  ]
+}

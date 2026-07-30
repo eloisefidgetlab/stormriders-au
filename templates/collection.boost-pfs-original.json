@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "collection-template-boost-pfs-original": {
+      "type": "collection-template-boost-pfs-original"
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products"
+    },
+    "collection-footer": {
+      "type": "collection-footer"
+    }
+  },
+  "order": [
+    "collection-template-boost-pfs-original",
+    "recently-viewed-products",
+    "collection-footer"
+  ]
+}
