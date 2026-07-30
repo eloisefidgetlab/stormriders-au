@@ -39,6 +39,7 @@
     "text_font": "nunito_sans_n4",
     "base_text_font_size": 14,
     "show_page_transition": false,
+    "show_button_transition": true,
     "show_image_zooming": false,
     "search_mode": "product,article,page",
     "product_show_price_on_hover": false,
@@ -216,24 +217,24 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "image_fMyD9g": {
+          "image_RhPjWK": {
             "type": "image",
             "settings": {
-              "image": "shopify://shop_images/BC_SALE_-_WEB_DESKTOP_6dc62f4a-3726-4a6e-a200-2c00fda6a89b.jpg",
-              "mobile_image": "shopify://shop_images/BC_SALE_-_WEB_MOBILE_44978dab-2098-4111-a693-a9ea37176e31.jpg",
+              "image": "shopify://shop_images/Web_banner.jpg",
+              "mobile_image": "shopify://shop_images/Mobile_banner.jpg",
               "apply_overlay": false,
               "content_position": "bottomCenter",
               "subheading": "",
               "title": "",
-              "button_1_text": "",
-              "button_1_link": "",
+              "button_1_text": "Denim & Pants",
+              "button_1_link": "https://boardcollective.com.au/collections/volcom-denim-pants",
               "button_2_text": "",
               "button_2_link": ""
             }
           }
         },
         "block_order": [
-          "image_fMyD9g"
+          "image_RhPjWK"
         ],
         "custom_css": [
           "section .Slideshow__Content .SectionHeader {display: flex; flex-direction: column-reverse; gap: 15px;}",
@@ -601,6 +602,7 @@
       },
       "1612914902547e6a54": {
         "type": "shop-board-collection",
+        "disabled": true,
         "custom_css": [
           "section > div {margin-top: 0;}"
         ],
@@ -796,6 +798,7 @@
           },
           "ea0d68ae-b6ff-48b6-901f-a0be204c5fbf": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Afends_White_Logo.png",
               "link": "https://boardcollective.com.au/collections/afends"
@@ -817,6 +820,7 @@
           },
           "item_TbemTc": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T124424.894.png",
               "link": "https://boardcollective.com.au/collections/calvin-klein"
@@ -831,6 +835,7 @@
           },
           "item_DAnHpW": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T124815.113.png",
               "link": "https://boardcollective.com.au/collections/dickies"
@@ -838,6 +843,7 @@
           },
           "f69e79ba-3880-4a12-8d42-2f600bfac7e1": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/logo.png",
               "link": "https://boardcollective.com.au/collections/dr-martens"
@@ -880,6 +886,7 @@
           },
           "item_zkbtUd": {
             "type": "item",
+            "disabled": true,
             "settings": {
               "image": "shopify://shop_images/Untitled_design_-_2024-04-23T135443.041.png",
               "link": "https://boardcollective.com.au/collections/nude-lucy"
@@ -1149,6 +1156,7 @@
           "98bbe1e0-7087-4290-aa86-550da764447d",
           "1fcaf491-6d08-4423-8001-2cdae69df06c"
         ],
+        "disabled": true,
         "settings": {
           "title": "USP Section"
         }
@@ -1177,10 +1185,11 @@
       },
       "1631146268b6dc62d0": {
         "type": "featured-collection-with-text",
+        "disabled": true,
         "settings": {
           "subtitle": "JOIN",
           "title": "MATES OF BOARDCOLLECTIVE",
-          "image": "shopify://shop_images/STR1.jpg",
+          "image": "shopify://shop_images/gempages_547951503764095880-8ee450ee-90ef-4176-b252-e707d84246ed_1.jpg",
           "button_text": "SIGN UP",
           "link": "https://boardcollective.com.au/account/register"
         }
@@ -1205,48 +1214,92 @@
       "16515545471a79502c": {
         "type": "best-sellers",
         "blocks": {
+          "product_JRFQ7B": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/3_21eabbc6-cbac-46b4-9ba9-edd6b6da159c.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Beggy Denim Pants",
+              "price": "$120",
+              "product_link": "https://boardcollective.com.au/products/volcom-beeggy-denim-pants-dusty-blue-wash"
+            }
+          },
+          "product_RqmtKD": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/Web_banners_f03c0db2-0617-4754-b0c0-5f04bd3bc765_1.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Full STone Sock 3PK - Black",
+              "price": "$20",
+              "product_link": "https://boardcollective.com.au/products/volcom-full-stone-sock-3pk-black"
+            }
+          },
+          "product_L8zTf9": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/3_66c3e385-9945-4290-974e-70512fea5261.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Modown Denim Jean",
+              "price": "$100",
+              "product_link": "https://boardcollective.com.au/products/a1931900-bdl"
+            }
+          },
+          "product_GRR8dN": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/Web_banners_1_4c8221f9-a507-4530-a2e6-04a27da376b4.jpg",
+              "brand": "VOLCOM",
+              "product_name": "Full Stone Sock 3PK - White",
+              "price": "$20",
+              "product_link": "https://boardcollective.com.au/products/volcom-full-stone-crew-socks-3pk-white"
+            }
+          },
           "product_gPxaHT": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/billabongubyft003160019black1_600x_1d567ec0-46d5-45e2-8f70-9cdef8f62f52.jpg",
+              "image": "shopify://shop_images/billabongubywt001590019black1.jpg",
               "brand": "BILLABONG",
-              "product_name": "Chrome Zip Thru Hood",
-              "price": "$99.99",
-              "product_link": "https://boardcollective.com.au/collections/mens-new-in/products/ubyft00316-0019"
+              "product_name": "Immortal Flannel",
+              "price": "$109.99",
+              "product_link": "https://boardcollective.com.au/products/billabong-immortal-flannel-black"
             }
           },
           "product_6czBkE": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/thrillswta25901hcabernet1_600x_3c540124-abd8-432e-afec-b539171df075.jpg",
-              "brand": "THRILLS",
-              "product_name": "Blair Bias Slip Dress",
-              "price": "$149.99",
-              "product_link": "https://boardcollective.com.au/collections/womens-new-in-1/products/wta25-901h"
+              "image": "shopify://shop_images/ripcurl0flwfl2924darkplum1.jpg",
+              "brand": "RUSTY",
+              "product_name": "Nova Vest Polar Fleece",
+              "price": "$109.99",
+              "product_link": "https://boardcollective.com.au/products/rip-curl-nova-vest-polar-fleece-dark-plum"
             }
           },
           "product_9PRr7D": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/thrillsta25113idusk1_600x_8dda3102-4109-47cf-8282-fe0ebb14d413.jpg",
-              "brand": "THRILLS",
-              "product_name": "Relax Your Eyes Oversize Fit Tee",
-              "price": "$59.99",
-              "product_link": "https://boardcollective.com.au/collections/mens-new-in/products/ta25-113i"
+              "image": "shopify://shop_images/formerffl26211mblkmerchblack1.jpg",
+              "brand": "FORMER",
+              "product_name": "Skullz Boxy Heavy Hood",
+              "price": "$159.99",
+              "product_link": "https://boardcollective.com.au/products/former-skullz-boxy-heavy-hood-merch-black"
             }
           },
           "product_izGPUt": {
             "type": "product",
             "settings": {
-              "image": "shopify://shop_images/rhythm0125wkn04oatoatmeal1_600x_4492681f-e8e4-43f0-8fc0-a2c0794e1a76.jpg",
-              "brand": "RHYTHM",
-              "product_name": "Quinn Zip Knit",
-              "price": "$109.99",
-              "product_link": "https://boardcollective.com.au/collections/womens-new-in-1/products/0125w-kn04-oat"
+              "image": "shopify://shop_images/banksiacoveds262knw01bccnatcoconatural1_1.jpg",
+              "brand": "BANKSIA COVE",
+              "product_name": "Wave Knit Crew",
+              "price": "$119.99",
+              "product_link": "https://boardcollective.com.au/products/banksia-cove-wave-knit-crew-coco-natural"
             }
           }
         },
         "block_order": [
+          "product_JRFQ7B",
+          "product_RqmtKD",
+          "product_L8zTf9",
+          "product_GRR8dN",
           "product_gPxaHT",
           "product_6czBkE",
           "product_9PRr7D",
@@ -1395,11 +1448,94 @@
           "item_edpaDm",
           "item_Gcgqzf"
         ],
+        "disabled": true,
         "settings": {
           "subheading": "",
           "title": "Blog posts",
           "button_link": "shopify://blogs/news",
           "button_text": "View all articles"
+        }
+      },
+      "collection_list_8rifnj": {
+        "type": "collection-list",
+        "blocks": {
+          "collection_M3jMrm": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "image": "shopify://shop_images/AUTUMN_SESSIONS_1_da683eb3-6299-4467-8b1f-43a8accab6a5.jpg",
+              "image_alignment": "center center",
+              "content_position": "bottomCenter",
+              "subheading": "",
+              "title": "",
+              "button_text": "Shop Now",
+              "button_link": "https://boardcollective.com.au/pages/skate",
+              "apply_overlay": true
+            }
+          },
+          "collection_KGPeNh": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "image": "shopify://shop_images/AUTUMN_SESSIONS_2_1.jpg",
+              "image_alignment": "center center",
+              "content_position": "bottomLeft",
+              "subheading": "",
+              "title": "",
+              "button_text": "Shop Now",
+              "button_link": "https://boardcollective.com.au/collections/footwear-1",
+              "apply_overlay": true
+            }
+          }
+        },
+        "block_order": [
+          "collection_M3jMrm",
+          "collection_KGPeNh"
+        ],
+        "disabled": true,
+        "name": "Collection list",
+        "settings": {
+          "image_size": "normal",
+          "add_spacing": true,
+          "expand_collection": false,
+          "is_top_banner": false,
+          "stack_on_mobile": true,
+          "text_color": "#ffffff",
+          "button_color": "#363636",
+          "background_color": "#000000"
+        }
+      },
+      "slideshow_C6Ux6n": {
+        "type": "slideshow",
+        "blocks": {
+          "image_JwrKPY": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/gempages_547951503764095880-4710b030-e708-468d-bd4c-ddad0f1ce9d6_1.jpg",
+              "mobile_image": "shopify://shop_images/gempages_547951503764095880-8ee450ee-90ef-4176-b252-e707d84246ed_1.jpg",
+              "apply_overlay": false,
+              "content_position": "bottomCenter",
+              "subheading": "",
+              "title": "",
+              "button_1_text": "JOIN OUR LOYALTY PROGRAM",
+              "button_1_link": "https://boardcollective.com.au/account/register",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "image_JwrKPY"
+        ],
+        "name": "Slideshow",
+        "settings": {
+          "show_fullscreen": false,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "button_color": "#363636",
+          "button_background": "#ffffff"
         }
       }
     },
@@ -1407,14 +1543,16 @@
       "slideshow",
       "16515545471a79502c",
       "1612914902547e6a54",
+      "collection_list_8rifnj",
+      "collection_list_3eHhXq",
+      "16135305818adab64c",
       "1615286512f597f8d3",
       "1612392567576d672c",
       "779e58c5-6742-4f1b-87dd-27e683b12213",
-      "collection_list_3eHhXq",
+      "slideshow_C6Ux6n",
       "1631146359e6a510ff",
       "blogs_redherring_6Gp8Ui",
       "1631146268b6dc62d0",
-      "16135305818adab64c",
       "1608151314ef349da2",
       "1613441460f1924bcb",
       "1639084620107018b3"
