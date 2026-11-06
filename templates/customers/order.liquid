@@ -192,7 +192,7 @@
                   <td><span class="Heading Text--subdued u-h7">{{ transaction.payment_details.credit_card_company }}</span></td>
                   <td class="Heading Text--subdued Text--alignRight u-h7">{{ transaction.payment_details.credit_card_number }}</td>
                 </tr>
-              {% elsif transaction.status == 'success' and (transaction.kind == 'sale' or transaction.kind == 'capture')%}
+              {% elsif transaction.status == 'success' and transaction.kind == 'sale' or transaction.kind == 'capture' %}
                 <tr>
                   <td class="hidden-phone"></td>
                   <td><span class="Heading Text--subdued u-h7">{{ transaction.gateway | replace: '_', ' ' | upcase }}</span></td>
@@ -239,4 +239,15 @@
       </div>
     </div>
   </div>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% elsif transaction.status == 'success' and (transaction.kind == 'sale'
+    or transaction.kind == 'capture')%}"
+  to: "{% elsif transaction.status == 'success' and transaction.kind == 'sale' or
+    transaction.kind == 'capture' %}"
+  position: 10493..10600
+{%- endcomment -%}
